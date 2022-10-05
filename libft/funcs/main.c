@@ -8,6 +8,6 @@ int	main()
 {
 	printf("%c\n", ft_toupper('a'));
 	printf("%c\n", ft_tolower('4'));
-	printf("%s\n", ft_strchr("im a iron man!", ' '));
-	printf("%s\n", ft_strrchr("im a iron man!", ' '));
+	printf("%s\n", ft_strchr("im a iron man!", 'i'));
+	printf("%s\n", ft_strrchr("im a iron man!", 'i'));
 }

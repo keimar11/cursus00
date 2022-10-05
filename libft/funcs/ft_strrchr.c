@@ -1,10 +1,13 @@
 char	*ft_strrchr(const char *s, int c)
 {
+	char *save;
+
+	save = 0;
 	while (*s != 0)
 	{
 		if (*s == c)
-			return ((char *)s);	//remove const
+			save = (char *) s;
 		s++;
 	}
-	return (0);
+	return save;
 }
