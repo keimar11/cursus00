@@ -9,24 +9,24 @@ void	*ft_calloc(int n, int size)
 	void	*p;
 	int		i;
 
-	p = save;
 	if (n == 0 || size == 0)
 	{
 		save = malloc (1);
 		save = NULL;
 		return (save);
 	}
-	p = (void *)malloc(n * size);
-	if (p == NULL)
+	save = (void *)malloc(n * size);
+	p = save;
+	if (save == NULL)
 		return (NULL);
 	i = 0;
 	while (i < n * size)
 	{
-		p = NULL;
-		p++;
+		save = NULL;
+		save++;
 		i++;
 	}
-	return (save);
+	return (p);
 }
 
 int	main()
