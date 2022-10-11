@@ -1,31 +1,36 @@
 #include <stdio.h>
 
-char	*ft_strnstr(const char *big, const char *little, int len)
+int	ft_strlen(char *str)
 {
 	int	i;
-	int	j;
-	int	k;
 
-	j = 0;
-	k = 0;
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
 
-	printf ("%c\n", little[3]);
+char	*ft_strnstr(const char *big, const char *little, int len)
+{
+	int		i;
+	int		j;
+	int		len_l;
+	char	*save;
 
-	while (k < len && *big != 0)
+	len_l = ft_strlen ((char *)little);
+	save = (char *)big;
+	i = 0;
+	while (save != 0 && i < len)
 	{
-		i = k;
-		printf ("%s\n", big);
-		// j = 0;
-		while (big[i] == little[j])
+		j = 0;
+		while (save[i] == little[j])
 		{
 			i++;
 			j++;
 		}
-		printf ("%s\n", big);
-		if (little[j] == 0)
-			return ((char *)big);
-		k++;
-		big++;
+		if (j == len_l)
+			return ((char *)save);
+		save++;
 	}
 	return (0);
 }
