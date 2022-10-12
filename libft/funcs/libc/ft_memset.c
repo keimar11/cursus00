@@ -1,6 +1,5 @@
-#include <string.h>
 
-void	*memset(void *s, int c, int n)
+void	*ft_memset(void *s, int c, int n)
 {
 	while (n-- > 0)
 	{
@@ -10,6 +9,7 @@ void	*memset(void *s, int c, int n)
 }
 
 #include <stdio.h>
+#include <string.h>
 
 int main(void)
 {
