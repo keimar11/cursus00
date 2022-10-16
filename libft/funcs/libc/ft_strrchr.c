@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/17 01:53:12 by marvin            #+#    #+#             */
+/*   Updated: 2022/10/17 01:53:12 by marvin           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 char	*ft_strrchr(const char *s, int c)
 {
-	char *save;
+	char	*save;
 
 	save = 0;
 	while (*s != 0)
@@ -9,5 +21,5 @@ char	*ft_strrchr(const char *s, int c)
 			save = (char *) s;
 		s++;
 	}
-	return save;
+	return (save);
 }

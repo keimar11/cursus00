@@ -1,28 +1,44 @@
-
-void	*ft_memset(void *s, int c, int n)
-{
-	while (n-- > 0)
-	{
-		*(char *)s++ = c;
-	}
-	return (s);
-}
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/17 02:02:05 by marvin            #+#    #+#             */
+/*   Updated: 2022/10/17 02:02:05 by marvin           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-int main(void)
+// void	*ft_memset(void *s, int c, int n)
+// {
+// 	while (n-- > 0)
+// 	{
+// 		*(char *)s++ = c;
+// 	}
+// 	return (s);
+// }
+
+void	*ft_memset(void *s, int c, int n)
 {
- char str[] = "train";
- str = ft_memset(str, 'i', 2);
- printf("%s\n", str);
- ft_memset(str+2, 'z', 3);
- printf("%s", str);
- return 0;
+	unsigned char	*p;
+
+	p = s;
+	while (n-- > 0)
+	{
+		*p++ = (unsigned char)c;
+	}
+	return (s);
 }
 
-/*
-	l9: return (s); はポインタが最後のメモリを指してるのでは？
-	それをリターンしていいんだっけ？ return s memory.
-	A. memset を使って中身を書き換えるだけで、この場合位置はかわらない
-*/
+// int main(void)
+// {
+//  char str[] = "train";
+//  printf("%s\n", str);
+//  ft_memset(str, 'z', 3);
+//  printf("%s", str);
+//  return 0;
+// }

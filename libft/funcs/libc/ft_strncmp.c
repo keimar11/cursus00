@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/17 01:53:00 by marvin            #+#    #+#             */
+/*   Updated: 2022/10/17 01:53:00 by marvin           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	unsigned int	i;
@@ -5,12 +17,8 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	i = 0;
 	while (i != n)
 	{
-		if (s1[i] > s2[i])
+		if (s1[i] != s2[i])
 			return (s1[i] - s2[i]);
-		if (s1[i] < s2[i])
-			return (s1[i] - s2[i]);
-		if (s1[i] == '\0' && s2[i] == '\0')
-			break;
 		i++;
 	}
 	return (0);

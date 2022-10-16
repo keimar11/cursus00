@@ -1,4 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/17 01:53:06 by marvin            #+#    #+#             */
+/*   Updated: 2022/10/17 01:53:06 by marvin           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
+#include <string.h>
 
 int	ft_strlen(char *str)
 {
@@ -35,16 +48,14 @@ char	*ft_strnstr(const char *big, const char *little, int len)
 	return (0);
 }
 
-#include <stdio.h>
-#include <string.h>
-int	main()
-{
-	const char *largestring = "Foo Bar Baz";
-	const char *smallstring = "oo";
-	char *ptr;
+// int	main()
+// {
+// 	const char *largestring = "Foo Bar Baz";
+// 	const char *smallstring = "oo";
+// 	char *ptr;
 
-	ptr = ft_strnstr(largestring, smallstring, 3);
-	printf("ft : %s\n", ptr);
-	ptr = strnstr(largestring, smallstring, 3);
-	printf("or : %s\n", ptr);
-}
+// 	ptr = ft_strnstr(largestring, smallstring, 3);
+// 	printf("ft : %s\n", ptr);
+// 	ptr = strnstr(largestring, smallstring, 3);
+// 	printf("or : %s\n", ptr);
+// }

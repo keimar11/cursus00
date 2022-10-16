@@ -1,28 +1,40 @@
-int	g_i;
-int	g_count;
-double	g_m;
-double	g_nb;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/17 01:29:37 by marvin            #+#    #+#             */
+/*   Updated: 2022/10/17 01:29:37 by marvin           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 double	ft_atoi(char *str)
 {
-	g_i = 0;
-	g_count = 0;
-	g_m = 1;
-	g_nb = 0;
-	while (str[g_i] == '+' || str[g_i] == '-')
+	int		i;
+	int		count;
+	double	m;
+	double	nb;
+
+	i = 0;
+	count = 0;
+	m = 1;
+	nb = 0;
+	while (str[i] == '+' || str[i] == '-')
 	{
-		if (str[g_i] == '-')
-			g_count++;
-		g_i++;
+		if (str[i] == '-')
+			count++;
+		i++;
 	}
-	if (g_count % 2 == 1)
-		g_m = g_m * -1;
-	while (str[g_i] >= '0' && str[g_i] <= '9')
+	if (count % 2 == 1)
+		m = m * -1;
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		g_nb = g_nb * 10 + (str[g_i] - '0');
-		g_i++;
-		if (! (str[g_i] >= '0' || str[g_i] <= '9'))
+		nb = nb * 10 + (str[i] - '0');
+		i++;
+		if (! (str[i] >= '0' || str[i] <= '9'))
 			break ;
 	}
-	return (g_m * g_nb);
+	return (m * nb);
 }
