@@ -6,28 +6,16 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 23:36:51 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/15 23:36:52 by marvin           ###   ########.fr       */
+/*   Updated: 2022/10/18 23:52:21 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		i++;
-	}
-	return (i);
-}
+#include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*array;
-	int		i;
+	size_t	i;
 
 	if (!s || !f)
 		return (0);
@@ -44,7 +32,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (array);
 }
 
-// #include <stdio.h>
+// 
 
 // char f(unsigned int i, char c)
 // {

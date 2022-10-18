@@ -6,22 +6,11 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 21:26:14 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/15 21:26:15 by marvin           ###   ########.fr       */
+/*   Updated: 2022/10/18 23:46:37 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 char	*str_rev(char *str)
 {
@@ -30,6 +19,7 @@ char	*str_rev(char *str)
 	int		i;
 
 	cnt = ft_strlen (str);
+	scr = (char *)malloc(sizeof(char) * (cnt + 1));
 	i = 0;
 	while (cnt-- > 0)
 	{
@@ -85,8 +75,6 @@ int	str_cnt(int n)
 char	*ft_itoa(int n)
 {
 	char	*str;
-	int		i;
-	int		flag;
 
 	str = (char *)malloc(sizeof(char) * str_cnt(n) + 1);
 	if (str == NULL)

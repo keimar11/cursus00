@@ -6,11 +6,11 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 21:41:43 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/17 00:11:13 by marvin           ###   ########.fr       */
+/*   Updated: 2022/10/18 23:44:30 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, int len)
 {
@@ -30,7 +30,6 @@ char	*ft_substr(char const *s, unsigned int start, int len)
 	return (sub);
 }
 
-// #include <stdio.h>
 // int main()
 // {
 // 	char s[] = "HelloWorld";

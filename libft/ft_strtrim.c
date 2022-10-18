@@ -6,12 +6,11 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 23:05:58 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/15 23:07:13 by marvin           ###   ########.fr       */
+/*   Updated: 2022/10/18 23:44:26 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 char	*trim_idx(char *str, char const *s1, char const *set)
 {
@@ -63,7 +62,6 @@ int	trim_cnt(char const *s1, char const *set)
 		j = 0;
 		i++;
 	}
-	printf ("%d\n", cnt);
 	return (cnt);
 }
 
@@ -77,6 +75,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ns = trim_idx(ns, s1, set);
 	return (ns);
 }
+
+// 
 
 // int main()
 // {

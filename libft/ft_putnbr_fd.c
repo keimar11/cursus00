@@ -6,11 +6,11 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 00:14:42 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/16 00:19:37 by marvin           ###   ########.fr       */
+/*   Updated: 2022/10/18 23:42:46 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	number(int a, char *arr, int i, int fd)
 {
@@ -35,7 +35,7 @@ void	number(int a, char *arr, int i, int fd)
 	i--;
 	while (i >= 0)
 	{
-		write(fd, &arr[i], 1);
+		write (fd, &arr[i], 1);
 		i--;
 	}
 }
@@ -50,10 +50,10 @@ void	ft_putnbr_fd(int n, int fd)
 	i = 0;
 	if (n == -2147483648)
 	{
-		write(fd, "-2147483648", 11);
+		write (fd, "-2147483648", 11);
 		return ;
 	}
-	number(a, arr, i, fd);
+	number (a, arr, i, fd);
 }
 
 // int	main(void)

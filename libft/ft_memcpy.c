@@ -10,18 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
-
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 void	*ft_memcpy(void *s1, const void *s2, size_t n)
 {
@@ -34,8 +23,6 @@ void	*ft_memcpy(void *s1, const void *s2, size_t n)
 	src = (char *)s2;
 	l1 = ft_strlen(str);
 	l2 = ft_strlen(src);
-	if (l1 < l2)
-		memmove(s1, s2, n);
 	while (l1 >= l2 && n-- > 0)
 		*str++ = *src++;
 	return (s1);
