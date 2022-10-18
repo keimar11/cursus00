@@ -21,7 +21,7 @@
 // 	return (s);
 // }
 
-void	*ft_memset(void *s, int c, int n)
+void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char	*p;
 
