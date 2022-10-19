@@ -23,7 +23,6 @@ void	*ft_memcpy(void *s1, const void *s2, size_t n)
 	src = (char *)s2;
 	l1 = ft_strlen(str);
 	l2 = ft_strlen(src);
-
 	while (l1 >= l2 && n-- > 0)
 		*str++ = *src++;
 	return (s1);
