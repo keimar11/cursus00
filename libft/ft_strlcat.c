@@ -12,49 +12,24 @@
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t	rv;
+	size_t	dst_len;
+	size_t	src_len;
 	size_t	i;
-	size_t	j;
 
-	rv = ft_strlen (dst) + ft_strlen ((char *)src);
+	dst_len = ft_strlen (dst);
+	src_len = ft_strlen (src);
+	if (dst_len > size)
+		return (dst_len + src_len);
 	i = 0;
-	j = 0;
-	if (dst > src)
+	while (*dst)
+		dst++;
+	while (i < size - ft_strlen (dst) - 1 && src[i])
 	{
-		i += dstsize - 1;
-		j += dstsize - ft_strlen (dst) - 1;
-		while (j > 0)
-			dst[i--] = src[j--];
-		i = dstsize - 1;
-	}
-	else
-	{
-		while (dst[i])
-			i++;
-		while (j < dstsize - ft_strlen (dst) - 1)
-			dst[i++] = src[j++];
+		dst[i] = src[i];
+		i++;
 	}
 	dst[i] = 0;
-	return (rv);
+	return (dst_len + src_len);
 }
-
-// int	main(void)
-// {
-// 	char a[100] = "Hie! ";
-// 	char b[] = "I'm Keity.";
-
-// 	printf("%ld\n", ft_strlcat (a, b, 100));
-// }
-
-// int	main(void)
-// {
-//  char c[256] = "42tokyo";
-//  printf ("%ld\n", ft_strlcat(NULL  , "aiueo", 0));  // 5
-//  printf ("%ld\n", ft_strlcat(NULL  , "aiueo", 2));  // sgf
-//  printf ("%ld\n", ft_strlcat(c     , NULL   , 0));  // sgf
-//  printf ("%ld\n", ft_strlcat(c     , NULL   , 0));  // sgf
-//  printf ("%ld\n", ft_strlcat(NULL  , NULL   , 0));  // sgf
-//  printf ("%ld\n", ft_strlcat(NULL  , NULL   , 2));  // sgf
-// }
