@@ -24,7 +24,7 @@ void	*ft_calloc(size_t n, size_t size)
 		ft_bzero (save, 1);
 		return (save);
 	}
-	if (n * size > __SIZE_MAX__)
+	if (n > (size_t)__SIZE_MAX__ / size)
 		return (NULL);
 	save = malloc(n * size);
 	if (!save)
@@ -35,23 +35,9 @@ void	*ft_calloc(size_t n, size_t size)
 
 // int	main()
 // {
-// 	int i, * ptr, sum = 0;
-// 	ptr = (int *)ft_calloc(10, sizeof(int));
-
-// 	if (ptr == NULL)
-// 	{
-// 		printf("Error! memory not allocated.");
-// 		exit(0);
-// 	}
-// 	printf("Calculate the sequence sum of the first 10 terms \n");
-// 	for (i = 0; i < 10; ++i) 
-// 	{
-// 		printf("a");
-// 		* (ptr + i) = i;
-// 		printf ("%d\n", *(int *) ptr + i);
-// 		sum += * (ptr + i);
-// 	}
-// 	printf("Sum = %d", sum);
-// 	free(ptr);
+// 	int i, *p, *q;
+// 	p = (int *)ft_calloc((size_t)__SIZE_MAX__ / 10 + (size_t)1, 10);
+// 	free(p);
+// 	q = (int *)calloc((size_t)__SIZE_MAX__ / 10 + (size_t)1, 10);
 // 	return 0;
 // }
