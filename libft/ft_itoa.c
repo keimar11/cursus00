@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 21:26:14 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/23 18:29:34 by marvin           ###   ########.fr       */
+/*   Updated: 2022/10/23 18:33:10 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,8 @@ char	*ft_itoa(int n)
 	return (str);
 }
 
-int main()
-{
-	printf("%s\n", ft_itoa(-2147483648));
-	return (0);
-}
+// int main()
+// {
+// 	printf("%s\n", ft_itoa(-2147483648));
+// 	return (0);
+// }
