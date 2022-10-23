@@ -16,7 +16,7 @@ void	*ft_calloc(size_t n, size_t size)
 {
 	void	*save;
 
-	if (n == 0 || size == 0)
+	if (n <= 0 || size <= 0 || n * size >= __SIZE_MAX__)
 	{
 		save = malloc (1);
 		if (!save)
