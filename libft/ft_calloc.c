@@ -24,7 +24,7 @@ void	*ft_calloc(size_t n, size_t size)
 		ft_bzero (save, 1);
 		return (save);
 	}
-	if (n > __SIZE_MAX__ / size)
+	if (n * size > __SIZE_MAX__)
 		return (NULL);
 	save = malloc(n * size);
 	if (!save)
