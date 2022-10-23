@@ -24,7 +24,7 @@ void	*ft_calloc(size_t n, size_t size)
 		ft_bzero (save, 1);
 		return (save);
 	}
-	if (n * size > __SIZE_MAX__)
+	if (n > __SIZE_MAX__ / size)
 		return (NULL);
 	save = malloc(n * size);
 	if (!save)
@@ -41,3 +41,6 @@ void	*ft_calloc(size_t n, size_t size)
 // 	q = (int *)calloc((size_t)__SIZE_MAX__ / 10 + (size_t)1, 10);
 // 	return 0;
 // }
+
+// (n * size > __SIZE_MAX__) -> n * size の時点でSIZE＿MAXを超えてしまう。処理できない。だから
+// (n > SIZE_MAX / size) -> にする。
