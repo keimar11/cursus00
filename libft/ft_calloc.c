@@ -20,15 +20,16 @@ void	*ft_calloc(size_t n, size_t size)
 	if (n == 0 || size == 0)
 	{
 		save = malloc (1);
-		save = NULL;
+		if (!save)
+			return (NULL);
+		ft_bzero (save, 1);
 		return (save);
 	}
 	save = (void *)malloc(n * size);
-	p = save;
-	if (save == NULL)
+	if (!save)
 		return (NULL);
 	ft_bzero (save, n * size);
-	return (p);
+	return (save);
 }
 
 // int	main()

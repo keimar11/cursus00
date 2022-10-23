@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+// size_t	ft_strlen(const char *str);
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
@@ -33,3 +34,28 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[i] = 0;
 	return (dst_len + src_len);
 }
+
+// int	main(void)
+// {
+// 	char *dst1 = calloc(100, sizeof(char));
+// 	char *dst2 = calloc(100, sizeof(char));
+// 	char *src1 = calloc(100, sizeof(char));
+// 	char *src2 = calloc(100, sizeof(char));
+// 	for (int i = 0; i < 99; i++)
+// 	{
+// 	src1[i] = i + 1;
+// 	src2[i] = i + 1;
+// 	}
+// 	(ft_strlcat(dst1, src1, 0), strlcat(dst2, src2, 0));
+// 	printf("%s, %s \n", dst1, dst2);
+// 	(ft_strlcat(dst1, src1, 50), strlcat(dst2, src2, 50));
+// 	printf("%s, %s \n", dst1, dst2);
+// 	(ft_strlcat(dst1, src1, 100), strlcat(dst2, src2, 100));
+// 	printf("%s, %s \n", dst1, dst2);
+// 	(ft_strlcat(dst1, src1, 10), strlcat(dst2, src2, 10));
+// 	printf("%s, %s \n", dst1, dst2);
+// 	(ft_strlcat(dst1, src1, 100), strlcat(dst2, src2, 100));
+// 	printf("%s, %s \n", dst1, dst2);
+// 	(ft_strlcat(NULL, src1, 0), strlcat(NULL, src2, 0));
+// 	printf("%s, %s \n", dst1, dst2);
+// }
