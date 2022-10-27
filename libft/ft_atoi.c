@@ -17,9 +17,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int			i;
-	int			m;
-	long long	nb;
+	int		i;
+	int		m;
+	int		nb;
 
 	if (str == NULL)
 		return (0);
@@ -33,22 +33,24 @@ int	ft_atoi(const char *str)
 	}
 	nb = 0;
 	while (str[i] >= '0' && str[i] <= '9')
+	{
 		nb = nb * 10 + (str[i++] - '0');
-	if (nb < LLONG_MIN)
+	}
+	if (nb < (int)LLONG_MIN)
 		return ((int)LLONG_MIN);
-	if (nb > LLONG_MAX || nb > ULLONG_MAX)
+	if (nb > (int)LLONG_MAX || nb > (int)ULLONG_MAX)
 		return ((int)LLONG_MAX);
-	return (m * (int)nb);
+	return (m * nb);
 }
 
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	printf ("Mine: %d\n", ft_atoi ("9223372036854775808"));
-// 	printf ("Orig: %d\n", atoi ("9223372036854775808"));
-// 	printf ("Mine: %d\n", ft_atoi ("-9223372036854775809"));
-// 	printf ("Orig: %d\n", atoi ("-9223372036854775809"));
-// }
+#include <stdio.h>
+int	main(void)
+{
+	printf ("Mine: %d\n", ft_atoi ("9223372036854775808"));
+	printf ("Orig: %d\n", atoi ("9223372036854775808"));
+	printf ("Mine: %d\n", ft_atoi ("-9223372036854775809"));
+	printf ("Orig: %d\n", atoi ("-9223372036854775809"));
+}
 
 // [test 27] ASSERT_EQ_I failed: ("-1") is not equal to expected ("0"). func main at file srcs/test_ft_atoi.c, line 44
 // [test 28] ASSERT_EQ_I failed: ("0") is not equal to expected ("-1"). func main at file srcs/test_ft_atoi.c, line 45
