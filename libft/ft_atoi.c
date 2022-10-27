@@ -11,9 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#define LLONG_MIN 0x8000000000000000
-#define LLONG_MAX 0x7FFFFFFFFFFFFFFF
-#define ULLONG_MAX 0xFFFFFFFFFFFFFFFF
 
 int	ft_atoi(const char *str)
 {
