@@ -19,8 +19,6 @@ char	*ft_strdup(const char *str)
 	int		i;
 
 	strl = ft_strlen (str);
-	if (strl == 0)
-		return (0);
 	scr = (char *)malloc (sizeof(char) * (strl + 1));
 	if (scr == 0)
 		return (0);
@@ -33,3 +31,8 @@ char	*ft_strdup(const char *str)
 	scr[i] = 0;
 	return (scr);
 }
+
+// int	main(void)
+// {
+// 	printf("%p", ft_strdup(""));
+// }
