@@ -11,6 +11,9 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#define LLONG_MIN 0x8000000000000000
+#define LLONG_MAX 0x7FFFFFFFFFFFFFFF
+#define ULLONG_MAX 0xFFFFFFFFFFFFFFFF
 
 int	ft_atoi(const char *str)
 {
@@ -30,16 +33,11 @@ int	ft_atoi(const char *str)
 	}
 	nb = 0;
 	while (str[i] >= '0' && str[i] <= '9')
-	{
-		nb = nb * 10 + (str[i] - '0');
-		i++;
-		if (! (str[i] >= '0' || str[i] <= '9'))
-			break ;
-	}
-	if (nb > 2147483647)
-		return (__LONG_MAX__);
-	if (nb < -2147483648)
-		return (0);
+		nb = nb * 10 + (str[i++] - '0');
+	if (nb < LLONG_MIN)
+		return ((int)LLONG_MIN);
+	if (nb > LLONG_MAX || nb > ULLONG_MAX)
+		return (LLONG_MAX);
 	return (m * nb);
 }
 
