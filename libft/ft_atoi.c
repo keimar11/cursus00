@@ -36,22 +36,32 @@ int	ft_atoi(const char *str)
 		if (! (str[i] >= '0' || str[i] <= '9'))
 			break ;
 	}
+	if (nb > 2147483647)
+		return (__LONG_MAX__);
+	if (nb < -2147483648)
+		return (0);
 	return (m * nb);
 }
 
-// int main()  
-// {  
-//     char str[] = "--23233.1234567890";     
-//     // Function call  
-//     int val = ft_atoi(str);  
-//     printf("%d \n", atoi(str));
-//     printf("%d ", val); 
-//     return 0;  
-// }  
-
 // #include <stdio.h>
-
 // int	main(void)
 // {
-// 	printf ("%d\n", ft_atoi ("-247483648"));
+// 	printf ("Mine: %d\n", ft_atoi ("9223372036854775808"));
+// 	printf ("Orig: %d\n", atoi ("9223372036854775808"));
+// 	printf ("Mine: %d\n", ft_atoi ("-9223372036854775809"));
+// 	printf ("Orig: %d\n", atoi ("-9223372036854775809"));
 // }
+
+// [test 27] ASSERT_EQ_I failed: ("-1") is not equal to expected ("0"). func main at file srcs/test_ft_atoi.c, line 44
+// [test 28] ASSERT_EQ_I failed: ("0") is not equal to expected ("-1"). func main at file srcs/test_ft_atoi.c, line 45
+// [test 29] ASSERT_EQ_I failed: ("-1") is not equal to expected ("0"). func main at file srcs/test_ft_atoi.c, line 46
+// [test 30] ASSERT_EQ_I failed: ("-1") is not equal to expected ("0"). func main at file srcs/test_ft_atoi.c, line 47
+// [test 36] ASSERT_EQ_I failed: ("-1") is not equal to expected ("-2"). func main at file srcs/test_ft_atoi.c, line 54
+// [test 37] ASSERT_EQ_I failed: ("-1") is not equal to expected ("-2"). func main at file srcs/test_ft_atoi.c, line 55
+
+// /* 27. LONG_MAX + 1 */ ASSERT_EQ_I(atoi("9223372036854775808"), ft_atoi("9223372036854775808"));
+// /* 28. LONG_MIN - 1 */ ASSERT_EQ_I(atoi("-9223372036854775809"), ft_atoi("-9223372036854775809"));
+// /* 29. ULONG_MAX + 1 */ ASSERT_EQ_I(atoi("18446744073709551616"), ft_atoi("18446744073709551616"));
+// /* 30. SIZE_MAX + 1 */ ASSERT_EQ_I(atoi("18446744073709551616"), ft_atoi("18446744073709551616"));
+// /* 36. ULONG_MAX - 1 */ ASSERT_EQ_I(atoi("18446744073709551614"), ft_atoi("18446744073709551614"));
+// /* 37. SIZE_MAX - 1 */ ASSERT_EQ_I(atoi("18446744073709551614"), ft_atoi("18446744073709551614"));
