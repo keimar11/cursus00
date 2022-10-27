@@ -36,9 +36,9 @@ int	ft_atoi(const char *str)
 	{
 		nb = nb * 10 + (str[i++] - '0');
 	}
-	if (nb < LLONG_MIN)
+	if (nb < INT_MIN)
 		return ((int)LLONG_MIN);
-	if (nb > LLONG_MAX || nb > ULLONG_MAX)
+	if (nb > INT_MAX)
 		return ((int)LLONG_MAX);
 	return (m * nb);
 }
