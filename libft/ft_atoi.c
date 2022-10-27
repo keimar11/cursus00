@@ -17,9 +17,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int		i;
-	int		m;
-	int		nb;
+	int			i;
+	int			m;
+	long long	nb;
 
 	if (str == NULL)
 		return (0);
@@ -37,8 +37,8 @@ int	ft_atoi(const char *str)
 	if (nb < LLONG_MIN)
 		return ((int)LLONG_MIN);
 	if (nb > LLONG_MAX || nb > ULLONG_MAX)
-		return (LLONG_MAX);
-	return (m * nb);
+		return ((int)LLONG_MAX);
+	return (m * (int)nb);
 }
 
 // #include <stdio.h>
