@@ -14,14 +14,22 @@
 
 char	*ft_strchr(const char *s, int c)
 {
+	if (c == 0)
+		return ((char *)s + ft_strlen(s));
 	while (*s != 0)
 	{
 		if (*s == c)
 			return ((char *)s);
 		s++;
 	}
-	return ((char *)s);
+	return (0);
 }
+
+// int	main(void)
+// {
+// 	printf("%p\n", ft_strchr("keitkeit", '\0'));
+// 	printf("%s\n", ft_strchr("keitkeit", '\0'));
+// }
 
 // [test 17] ASSERT_EQ_STR failed: "0x0" is not equal to expected "0x108e5bb64"func main at file srcs/test_ft_strchr.c, line 34
 // [test 18] ASSERT_EQ_STR failed: "0x0" is not equal to expected "0x108e5bb54"func main at file srcs/test_ft_strchr.c, line 35
