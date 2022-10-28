@@ -14,14 +14,12 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	i;
-
-	i = 0;
-	while (i != n)
+	while (n-- > 0)
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
-		i++;
+		if (*(unsigned char *)s1 != *(unsigned char *)s2)
+			return (*(unsigned char *)s1 - *(unsigned char *)s2);
+		s1++;
+		s2++;
 	}
 	return (0);
 }
@@ -35,4 +33,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 // /* 52 */ ASSERT_EQ_I(ft_strncmp(str, cmp2, len), strncmp(str, cmp2, len));
 // cmp2[5] = -42;
 // /* 53 */ ASSERT_EQ_I(ft_strncmp(str, cmp2, len), strncmp(str, cmp2, len));
-// char i = 'f';
