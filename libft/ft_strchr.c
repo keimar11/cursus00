@@ -14,11 +14,11 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	if ((char)c == 0)
+	if (c == 0)
 		return ((char *)s + ft_strlen(s));
 	while (*s != 0)
 	{
-		if (*s == c)
+		if (*(unsigned char *)s == (unsigned char)c)
 			return ((char *)s);
 		s++;
 	}
@@ -41,3 +41,9 @@ char	*ft_strchr(const char *s, int c)
 // [test 19] ASSERT_EQ_STR failed: "0x0" is not equal to expected "0x1078aab55"func main at file srcs/test_ft_strrchr.c, line 36
 // [test 20] ASSERT_EQ_STR failed: "0x0" is not equal to expected "0x1078aab54"func main at file srcs/test_ft_strrchr.c, line 37
 // [test 21] ASSERT_EQ_STR failed: "0x0" is not equal to expected "0x1078aab55"func main at file srcs/test_ft_strrchr.c, line 38
+
+// /* 17 */ ASSERT_EQ_STR(ft_strchr(s, '\0'), strchr(s, '\0'));
+// /* 18 */ ASSERT_EQ_STR(ft_strchr(s, 'l' + 256), strchr(s, 'l' + 256));
+// /* 19 */ ASSERT_EQ_STR(ft_strchr(s, 'i' + 256), strchr(s, 'i' + 256));
+// /* 20 */ ASSERT_EQ_STR(ft_strchr(s, 'l' - 256), strchr(s, 'l' - 256));
+// /* 21 */ ASSERT_EQ_STR(ft_strchr(s, 'i' - 256), strchr(s, 'i' - 256));
