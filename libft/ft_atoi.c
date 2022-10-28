@@ -14,29 +14,21 @@
 
 int	ft_atoi(const char *str)
 {
-	int		i;
 	int		m;
 	int		nb;
 
 	if (str == NULL)
 		return (0);
-	i = 0;
 	m = 1;
-	if (str[i] == '-' || str[i] == '+')
+	if (*str == '-' || *str == '+')
 	{
-		if (str[i] == '-')
+		if (*str == '-')
 			m *= -1;
-		i++;
+		str++;
 	}
 	nb = 0;
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		nb = nb * 10 + (str[i++] - '0');
-	}
-	if (nb < INT_MIN)
-		return ((int)LLONG_MIN);
-	if (nb > INT_MAX)
-		return ((int)LLONG_MAX);
+	while (*str >= '0' && *str <= '9')
+		nb = nb * 10 + (*str++ - '0');
 	return (m * nb);
 }
 
@@ -47,6 +39,18 @@ int	ft_atoi(const char *str)
 // 	printf ("Orig: %d\n", atoi ("9223372036854775808"));
 // 	printf ("Mine: %d\n", ft_atoi ("-9223372036854775809"));
 // 	printf ("Orig: %d\n", atoi ("-9223372036854775809"));
+// 	printf ("Mine: %d\n", ft_atoi ("-922337"));
+// 	printf ("Orig: %d\n", atoi ("-922337"));
+// 	printf("LLONG_MAX: %ld\n", LLONG_MAX);
+// 	printf("LLONG_MIN: %ld\n", LLONG_MIN);
+// 	printf("MAX/10: %ld\n", LLONG_MAX/10);
+// 	printf("MAX%%10: %ld\n", LLONG_MAX%10);
+// 	printf("MIN/10: %ld\n", LLONG_MIN/10);
+// 	printf("MIN%%10: %ld\n", LLONG_MIN%10);
+// 	printf("-11/10 = %d\n", -11/10);
+// 	printf("-11%%10 = %d\n", -11%10);
+// 	printf("11/-10 = %d\n", 11/(-10));
+// 	printf("11%%-10 = %d\n", 11%(-10));
 // }
 
 // [test 27] ASSERT_EQ_I failed: ("-1") is not equal to expected ("0"). func main at file srcs/test_ft_atoi.c, line 44
