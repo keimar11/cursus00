@@ -25,7 +25,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	while (big != 0 && k < len)
 	{
 		i = 0;
-		while (big[i] == little[i])
+		while (big[i] == little[i] && i < len)
 			i++;
 		if (i == len_l)
 			return ((char *)big);
@@ -35,16 +35,24 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	return (0);
 }
 
-// int	main()
+// intmain(void)
 // {
-// 	const char *largestring = "Foo Bar Baz";
-// 	const char *smallstring = "oo";
-// 	char *ptr;
-
-// 	ptr = ft_strnstr(largestring, smallstring, 3);
-// 	printf("ft : %s\n", ptr);
-// 	ptr = strnstr(largestring, smallstring, 3);
-// 	printf("or : %s\n", ptr);
+// 	char *str = "libft-test-tokyo";
+// 	intlen = strlen(str);
+// 	for (int i = 0; i < len; i++)
+// 	{
+// 	ASSERT_EQ_PTR(ft_strnstr(str, "", i), strnstr(str, "", i));
+// 	ASSERT_EQ_PTR(ft_strnstr(str, "libft-test-tokyo", i), strnstr(str, "libft-test-tokyo", i));
+// 	ASSERT_EQ_PTR(ft_strnstr(str, "libft", i), strnstr(str, "libft", i));
+// 	ASSERT_EQ_PTR(ft_strnstr(str, "test", i), strnstr(str, "test", i));
+// 	ASSERT_EQ_PTR(ft_strnstr(str, "tokyo", i), strnstr(str, "tokyo", i));
+// 	ASSERT_EQ_PTR(ft_strnstr(str, "libft~", i), strnstr(str, "libft~", i));
+// 	ASSERT_EQ_PTR(ft_strnstr(str, "z", i), strnstr(str, "z", i));
+// 	}
+// 	/* 113 */ ASSERT_EQ_PTR(ft_strnstr("", "hello", 5), strnstr("", "hello", 5));
+// 	/* 114 */ ASSERT_EQ_PTR(ft_strnstr("", "", 0), strnstr("", "", 0));
+// 	/* 115 */ ASSERT_EQ_PTR(ft_strnstr(NULL, "1", 0), strnstr(NULL, "1", 0));
+// 	// Segmentation Fault
+// 	// /* 116 */ ASSERT_EQ_PTR(ft_strnstr(NULL, "fake", 3), strnstr(NULL, "fake", 3));
+// 	// /* 116 */ ASSERT_EQ_PTR(ft_strnstr(NULL, "1", 1), ft_strnstr(NULL, "1", 1));
 // }
-
-// test 1] ASSERT_EQ_PTR failed: ("0x0") is not equal to expected ("0x109989b32"). func main at file srcs/test_ft_strnstr.c, line 21
