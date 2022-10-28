@@ -15,24 +15,22 @@
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
-	size_t	j;
+	size_t	k;
 	size_t	len_l;
-	char	*save;
 
-	len_l = ft_strlen ((char *)little);
-	save = (char *)big;
-	i = 0;
-	while (save != 0 && i < len)
+	if (*little == 0)
+		return ((char *)big + ft_strlen(big));
+	len_l = ft_strlen(little);
+	k = 0;
+	while (big != 0 && k < len)
 	{
-		j = 0;
-		while (save[i] == little[j])
-		{
+		i = 0;
+		while (big[i] == little[i])
 			i++;
-			j++;
-		}
-		if (j == len_l)
-			return ((char *)save);
-		save++;
+		if (i == len_l)
+			return ((char *)big);
+		big++;
+		k++;
 	}
 	return (0);
 }
@@ -48,3 +46,5 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 // 	ptr = strnstr(largestring, smallstring, 3);
 // 	printf("or : %s\n", ptr);
 // }
+
+// test 1] ASSERT_EQ_PTR failed: ("0x0") is not equal to expected ("0x109989b32"). func main at file srcs/test_ft_strnstr.c, line 21
