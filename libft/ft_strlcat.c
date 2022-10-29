@@ -14,24 +14,22 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t	dst_len;
-	size_t	src_len;
+	size_t	dl;
+	size_t	sl;
 	size_t	i;
 
-	dst_len = ft_strlen (dst);
-	src_len = ft_strlen (src);
-	if (dst_len > size || size < 1)
-		return (dst_len + src_len);
-	i = 0;
+	dl = ft_strlen (dst);
+	sl = ft_strlen (src);
 	while (*dst)
-		dst += dst_len;
+		dst += dl;
+	i = 0;
 	while (i < size - ft_strlen (dst) - 1 && src[i])
 	{
 		dst[i] = src[i];
 		i++;
 	}
 	dst[i] = 0;
-	return (dst_len + src_len);
+	return (dl + sl);
 }
 
 // int	main(void)
@@ -51,6 +49,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 // 	src1[i] = i + 1;
 // 	src2[i] = i + 1;
 // 	}
+
 // 	/* 7 */ ASSERT_EQ_I(ft_strlcat(dst1, src1, 0), strlcat(dst2, src2, 0));
 // 	/* 8 */ ASSERT_EQ_STR(dst1, dst2);
 // 	/* 9 */ ASSERT_EQ_I(ft_strlcat(dst1, src1, 10), strlcat(dst2, src2, 10));
