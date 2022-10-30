@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 23:05:58 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/18 23:44:26 by marvin           ###   ########.fr       */
+/*   Updated: 2022/10/30 15:05:29 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,22 @@
 char	*trim_idx(char *str, char const *s1, char const *set)
 {
 	int	i;
-	int	j;
-	int	idx;
+	int	k;
 
-	i = 0;
-	j = 0;
-	idx = 0;
-	while (s1[i])
+	k = 0;
+	while (*s1)
 	{
-		while (set[j])
+		i = 0;
+		while (s1[i] == set[i])
+			i++;
+		if (i - 1 == ft_strlen(set))
 		{
-			if (s1[i] == set[j])
-				break ;
-			j++;
+			s1++;
+			break ;
 		}
-		if (set[j] == 0)
-		{
-			str[idx++] = s1[i];
-		}
-		j = 0;
-		i++;
+		str[k++] = *s1++;
 	}
-	str[idx] = 0;
+	str[k] = 0;
 	return (str);
 }
 
@@ -76,12 +70,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (ns);
 }
 
-// 
-
 // int main()
 // {
-// 	char s1[] = "abcabc wowow bbccaa";
-// 	char set[] = " bb";
+// 	char s1[] = "hello world";
+// 	char set[] = "world";
 // 	printf("%s", ft_strtrim(s1, set));
 // 	return 0;
 // }
