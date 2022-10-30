@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 23:05:58 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/30 15:05:29 by marvin           ###   ########.fr       */
+/*   Updated: 2022/10/30 15:07:14 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*trim_idx(char *str, char const *s1, char const *set)
 {
-	int	i;
-	int	k;
+	size_t	i;
+	size_t	k;
 
 	k = 0;
 	while (*s1)
