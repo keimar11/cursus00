@@ -46,6 +46,7 @@ int	arr_cnt(char const *s, char c)
 			cnt++;
 		i++;
 	}
+	printf ("%d\n", cnt);
 	return (cnt);
 }
 
@@ -56,7 +57,7 @@ char	**ft_split(char const *s, char c)
 	int		j;
 	int		save;
 
-	str = (char **)malloc(sizeof(char *) * (arr_cnt(s, c) + 1));
+	str = (char **)calloc((arr_cnt(s, c) + 1), sizeof(char *));
 	if (!str)
 		return (NULL);
 	i = 0;
@@ -80,7 +81,7 @@ char	**ft_split(char const *s, char c)
 // 	char	**arr;
 // 	int		i;
 
-// 	arr = ft_split("I am a Iron Man", ' ');
+// 	arr = ft_split("I   am           a     Iron       Man", ' ');
 // 	i = 0;
 // 	while (arr[i] != 0)
 // 	{
