@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 23:05:58 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/30 15:07:14 by marvin           ###   ########.fr       */
+/*   Updated: 2022/10/30 15:16:40 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,23 @@ char	*trim_idx(char *str, char const *s1, char const *set)
 {
 	size_t	i;
 	size_t	k;
+	size_t	setsize;
 
 	k = 0;
+	setsize = ft_strlen(set);
 	while (*s1)
 	{
 		i = 0;
 		while (s1[i] == set[i])
 			i++;
-		if (i - 1 == ft_strlen(set))
+		printf ("%d\n", i);
+		if (i == setsize)
 		{
-			s1++;
-			break ;
+			s1 += setsize;
+			printf ("%s\n", s1);
+			continue ;
 		}
+		printf ("%s\n", s1);
 		str[k++] = *s1++;
 	}
 	str[k] = 0;
@@ -70,10 +75,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (ns);
 }
 
-// int main()
-// {
-// 	char s1[] = "hello world";
-// 	char set[] = "world";
-// 	printf("%s", ft_strtrim(s1, set));
-// 	return 0;
-// }
+int main()
+{
+	char s1[] = "hello world";
+	char set[] = "hello";
+	printf("%s", ft_strtrim(s1, set));
+	return 0;
+}
