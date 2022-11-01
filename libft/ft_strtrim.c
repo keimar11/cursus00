@@ -76,13 +76,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (dst);
 }
 
-int main()
-{
-	char s1[] = "worlt world";
-	char set[] = "world";
-	printf("%s", ft_strtrim(s1, set));
-	return 0;
-}
+// int main()
+// {
+// 	char s1[] = "worlt world";
+// 	char set[] = "world";
+// 	printf("%s", ft_strtrim(s1, set));
+// 	return 0;
+// }
 
 // intmain(void)
 // {
