@@ -68,9 +68,8 @@ char	**ft_split(char const *s, char c)
 		save = i;
 		while (s[i] != c && s[i] != 0)
 			i++;
-		str[j] = ft_strndup (&s[save], i - save);
-		if (str[j++] == 0)
-			return (NULL);
+		printf("%d %d\n", save, i);
+		str[j++] = ft_strndup (&s[save], i - save);
 	}
 	return (str);
 }
@@ -80,7 +79,7 @@ int	main(void)
 	char	**arr;
 	int		i;
 
-	arr = ft_split(",,,hello,,,world,,,42,,,tokyo,,,,", ',');
+	arr = ft_split(",,,hello,,,world,,,42,,,tokyo,,,,,,", ',');
 	i = 0;
 	while (arr[i] != 0)
 	{

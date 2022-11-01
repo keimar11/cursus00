@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 21:41:43 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/30 23:44:58 by marvin           ###   ########.fr       */
+/*   Updated: 2022/11/01 17:46:41 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	sub [i] = 0;
 	return (sub);
 }
-
-// int main()
-// {
-// 	char s[] = "HelloWorld";
-// 	int start = 20;
-// 	int len = 100;
-// 	printf("%s", ft_substr(s, start, len));
-// 	return 0;
-// }
-
-// [test 5] ASSERT_EQ_STR failed: ("cs/test_ft_substr.c") is not equal to expected (""). func main at file srcs/test_ft_substr.c, line 22
-// [test 10] ASSERT_EQ_STR failed: ("cs/te") is not equal to expected (""). func main at file srcs/test_ft_substr.c, line 27

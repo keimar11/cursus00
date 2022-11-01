@@ -14,27 +14,7 @@
 
 char	*trim_put(char *dst, char const *s1, char const *set)
 {
-	size_t	i;
-	size_t	j;
-	size_t	k;
-
-	i = 0;
-	k = 0;
-	while (s1[i])
-	{
-		j = 0;
-		while (s1[i++] == set[j])
-			j++;
-		printf("%d\n", j);
-		if (set[j] != 0)
-		{
-			i += -j;
-			printf("%d\n", i);
-		}
-		dst[k++] = s1[i++];
-		printf("%s\n", dst);
-	}
-	dst[k] = 0;
+	ft
 	return (dst);
 }
 
@@ -80,17 +60,3 @@ int main()
 	printf("%s", ft_strtrim(s1, set));
 	return 0;
 }
-
-// intmain(void)
-// {
-// /* 1 */ ASSERT_EQ_STR(ft_strtrim("hello world", "world"), "hello ");
-// /* 2 */ ASSERT_EQ_STR(ft_strtrim("hello world", "hello"), " world");
-// /* 3 */ ASSERT_EQ_STR(ft_strtrim("hello world", ""), "hello world");
-// /* 4 */ ASSERT_EQ_STR(ft_strtrim("", ""), "");
-// /* 5 */ ASSERT_EQ_STR(ft_strtrim("    hello world     ", " "), "hello w
-// orld");
-// /* 6 */ ASSERT_EQ_STR(ft_strtrim(" \n\t\r    hello \n\t\r world     \r\
-// t\n\t \r\n", " \n\t\r"), "hello \n\t\r world");
-// /* 7 */ ASSERT_EQ_STR(ft_strtrim("hello world", "abcdefghijklmnopqrstuv
-// wxyz"), " ");
-// }
