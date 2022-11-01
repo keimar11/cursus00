@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 00:08:01 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/17 00:08:01 by marvin           ###   ########.fr       */
+/*   Updated: 2022/11/01 17:35:54 by keitakah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ char	**ft_split(char const *s, char c)
 	int		j;
 	int		save;
 
-	str = (char **)calloc((arr_cnt(s, c) + 1), sizeof(char *));
+	str = (char **)ft_calloc((arr_cnt(s, c) + 1), sizeof(char *));
 	if (!str)
 		return (NULL);
 	i = 0;
@@ -68,12 +68,15 @@ char	**ft_split(char const *s, char c)
 		save = i;
 		while (s[i] != c && s[i] != 0)
 			i++;
+<<<<<<< HEAD
 		printf("%d %d\n", save, i);
+=======
+>>>>>>> c23eb50d098c8bf0d0a216cb69b29e059d5c2ad0
 		str[j++] = ft_strndup (&s[save], i - save);
 	}
 	return (str);
 }
-
+/*
 int	main(void)
 {
 	char	**arr;
@@ -88,3 +91,4 @@ int	main(void)
 	}
 	free(arr);
 }
+*/
