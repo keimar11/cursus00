@@ -14,7 +14,7 @@
 
 char	*trim_put(char *dst, char const *s1, char const *set)
 {
-	ft
+	
 	return (dst);
 }
 

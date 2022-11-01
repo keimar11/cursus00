@@ -61,17 +61,13 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	i = 0;
 	j = 0;
-	while (s[i] != 0)
+	while (s[i])
 	{
 		while (s[i] == c)
 			i++;
 		save = i;
 		while (s[i] != c && s[i] != 0)
 			i++;
-<<<<<<< HEAD
-		printf("%d %d\n", save, i);
-=======
->>>>>>> c23eb50d098c8bf0d0a216cb69b29e059d5c2ad0
 		str[j++] = ft_strndup (&s[save], i - save);
 	}
 	return (str);

@@ -5,15 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/15 23:05:58 by marvin            #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/11/01 18:03:04 by marvin           ###   ########.fr       */
-=======
-/*   Updated: 2022/11/01 17:12:00 by keitakah         ###   ########.fr       */
->>>>>>> c23eb50d098c8bf0d0a216cb69b29e059d5c2ad0
+/*   Created: 2022/11/02 01:27:30 by marvin            #+#    #+#             */
+/*   Updated: 2022/11/02 01:27:30 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
+
 #include "libft.h"
 
 char	*trim_put(char *dst, char const *s1, char const *set)
@@ -24,13 +20,16 @@ char	*trim_put(char *dst, char const *s1, char const *set)
 
 	i = 0;
 	k = 0;
-	while (s1[i])
+	while (i < ft_strlen(s1))
 	{
 		j = 0;
-		while (s1[i++] == set[j])
+		while (s1[i] == set[j])
+		{
+			i++;
 			j++;
-		printf("%d\n", j);
-		if (set[j] != 0)
+		}
+		printf("%d %d\n", i, j);
+		if (set[j - 1] != 0)
 		{
 			i += -j;
 			printf("%d\n", i);
@@ -38,7 +37,7 @@ char	*trim_put(char *dst, char const *s1, char const *set)
 		dst[k++] = s1[i++];
 		printf("%s\n", dst);
 	}
-	dst[k] = 0;
+	dst[k] = '\0';
 	return (dst);
 }
 
@@ -79,12 +78,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 int main()
 {
-	char s1[] = "hello world";
-	char set[] = "hell";
+	char s1[] = "worlt world";
+	char set[] = "world";
 	printf("%s", ft_strtrim(s1, set));
 	return 0;
 }
-*/
+
 // intmain(void)
 // {
 // /* 1 */ ASSERT_EQ_STR(ft_strtrim("hello world", "world"), "hello ");
