@@ -28,14 +28,11 @@ char	*trim_put(char *dst, char const *s1, char const *set)
 			i++;
 			j++;
 		}
-		printf("%d %d\n", i, j);
 		if (set[j - 1] != 0)
 		{
 			i += -j;
-			printf("%d\n", i);
 		}
 		dst[k++] = s1[i++];
-		printf("%s\n", dst);
 	}
 	dst[k] = '\0';
 	return (dst);
