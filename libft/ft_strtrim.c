@@ -6,10 +6,10 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 23:05:58 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/31 11:20:49 by marvin           ###   ########.fr       */
+/*   Updated: 2022/11/01 17:12:00 by keitakah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
 #include "libft.h"
 
 char	*trim_put(char *dst, char const *s1, char const *set)
@@ -78,7 +78,7 @@ int main()
 	printf("%s", ft_strtrim(s1, set));
 	return 0;
 }
-
+*/
 // intmain(void)
 // {
 // /* 1 */ ASSERT_EQ_STR(ft_strtrim("hello world", "world"), "hello ");
