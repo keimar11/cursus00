@@ -46,7 +46,6 @@ int	arr_cnt(char const *s, char c)
 			cnt++;
 		i++;
 	}
-	printf ("%d\n", cnt);
 	return (cnt);
 }
 
@@ -76,17 +75,17 @@ char	**ft_split(char const *s, char c)
 	return (str);
 }
 
-// int	main(void)
-// {
-// 	char	**arr;
-// 	int		i;
+int	main(void)
+{
+	char	**arr;
+	int		i;
 
-// 	arr = ft_split("I   am           a     Iron       Man", ' ');
-// 	i = 0;
-// 	while (arr[i] != 0)
-// 	{
-// 		printf("%s\n", arr[i]);
-// 		i++;
-// 	}
-// 	free(arr);
-// }
+	arr = ft_split(",,,hello,,,world,,,42,,,tokyo,,,,", ',');
+	i = 0;
+	while (arr[i] != 0)
+	{
+		printf("%s\n", arr[i]);
+		i++;
+	}
+	free(arr);
+}
