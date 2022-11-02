@@ -12,71 +12,27 @@
 
 #include "libft.h"
 
-char	*trim_put(char *dst, char const *s1, char const *set)
-{
-	size_t	i;
-	size_t	j;
-	size_t	k;
-
-	i = 0;
-	k = 0;
-	while (i < ft_strlen(s1))
-	{
-		j = 0;
-		while (s1[i] == set[j])
-		{
-			i++;
-			j++;
-		}
-		if (set[j - 1] != 0)
-		{
-			i += -j;
-		}
-		dst[k++] = s1[i++];
-	}
-	dst[k] = '\0';
-	return (dst);
-}
-
-size_t	trim_cnt(char const *s1, char const *set)
-{
-	size_t	i;
-	size_t	j;
-	size_t	m;
-
-	i = 0;
-	m = 0;
-	while (s1[i])
-	{
-		j = 0;
-		if (s1[i] == set[j])
-		{
-			while (s1[i++] == set[j])
-				j++;
-			i -= 1;
-			if (set[j] == 0)
-				m += -1 * ft_strlen(set);
-		}
-		i++;
-	}
-	return (i + m);
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*dst;
+	char	*str;
+	size_t	bgn;
+	size_t	end;
 
-	dst = malloc(sizeof(char) * (trim_cnt(s1, set) + 1));
-	if (!dst)
-		return (NULL);
-	dst = trim_put(dst, s1, set);
-	return (dst);
+	bgn = 0;
+	while (s1[bgn] && ft_strchr(set, s1[bgn]))
+		bgn++;
+	end = ft_strlen(s1);
+	while (s1[end - 1] && ft_strchr(set, s1[end - 1]))
+		end--;
+	str = malloc(sizeof(char) * (end - bgn + 1));
+	ft_strlcpy (str, &s1[bgn], end - bgn + 1);
+	return (str);
 }
 
 // int main()
 // {
-// 	char s1[] = "worlt world";
-// 	char set[] = "world";
+// 	char s1[] = ",,,, ,,worlt world,,,,,,,,, ,,";
+// 	char set[] = ",";
 // 	printf("%s", ft_strtrim(s1, set));
 // 	return 0;
 // }
