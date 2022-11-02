@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-char	*overflow(size_t n, const char c)
+char	*overflow(long int n, const char c)
 {
-	size_t	jdg1;
-	size_t	jdg2;
+	long int	jdg1;
+	long int	jdg2;
 
 	jdg1 = LONG_MAX / 10;
 	jdg2 = LONG_MAX % 10;
@@ -26,33 +26,24 @@ char	*overflow(size_t n, const char c)
 	return ("safe");
 }
 
-char	*underflow(size_t n, const char c)
+char	*underflow(long int n, const char c)
 {
-	size_t	jdg1;
-	size_t	jdg2;
+	long int	jdg1;
+	long int	jdg2;
 
-	printf ("%ld\n", n);
-	printf ("%c\n", c);
 	jdg1 = LONG_MIN / 10;
 	jdg2 = LONG_MIN % 10;
-	printf ("%ld\n", jdg1);
-	printf ("%ld\n", jdg2);
-
-	if (n < jdg1){
-		printf ("yah\n");
+	if (n < jdg1)
 		return (NULL);
-	}
-	if (n == jdg1 && (c - 48) * (-1) < jdg2){
-		printf ("yeah\n");
+	if (n == jdg1 / 10 && (c - 48) * (-1) < jdg2)
 		return (NULL);
-	}
 	return ("safe");
 }
 
 int	ft_atoi(const char *str)
 {
-	size_t	m;
-	size_t	nb;
+	int			m;
+	long int	nb;
 
 	while (*str == ' ' || (*str >= 9 && *str <= 13))
 		str++;
@@ -68,7 +59,7 @@ int	ft_atoi(const char *str)
 	{
 		if (overflow(nb, *str) == NULL)
 			return ((int)LONG_MAX);
-		if (m == -1 && underflow(-1 * nb, *str) == NULL)
+		if (m == -1 && underflow(-1 * nb, *(str + 1)) == NULL)
 			return ((int)LONG_MIN);
 		nb = nb * 10 + (*str++ - '0');
 	}
@@ -86,6 +77,9 @@ int	ft_atoi(const char *str)
 // 	printf ("Orig: %d\n", atoi ("-9223372036854775809"));
 // 	printf ("Mine: %d\n", ft_atoi ("-922337"));
 // 	printf ("Orig: %d\n", atoi ("-922337"));
+
+// 	printf("MIN/10: %ld\n", LONG_MIN/10);
+// 	printf("MIN%%10: %ld\n", LONG_MIN%10);
 // }
 
 // [test 27] ASSERT_EQ_I failed: ("-1") is not equal to expected ("0"). func main at file srcs/test_ft_atoi.c, line 44
@@ -101,7 +95,13 @@ int	ft_atoi(const char *str)
 // /* 30. SIZE_MAX + 1 */ ASSERT_EQ_I(atoi("18446744073709551616"), ft_atoi("18446744073709551616"));
 // /* 36. ULONG_MAX - 1 */ ASSERT_EQ_I(atoi("18446744073709551614"), ft_atoi("18446744073709551614"));
 // /* 37. SIZE_MAX - 1 */ ASSERT_EQ_I(atoi("18446744073709551614"), ft_atoi("18446744073709551614"));
-
+	// printf ("%ld\n", n);
+	// printf ("%ld\n", jdg1);
+	// printf ("%d\n", c - 48);
+	// printf ("%ld\n", jdg2);
+	// printf ("yah\n");
+	// printf("yeh\n");
+	// printf ("yeah\n");
 	// printf("LONG_MAX: %ld\n", LONG_MAX);
 	// printf("LONG_MIN: %ld\n", LONG_MIN);
 	// printf("MAX/10: %ld\n", LONG_MAX/10);
