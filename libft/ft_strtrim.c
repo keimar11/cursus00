@@ -36,17 +36,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 // 	printf("%s", ft_strtrim(s1, set));
 // 	return 0;
 // }
-
-// intmain(void)
-// {
-// /* 1 */ ASSERT_EQ_STR(ft_strtrim("hello world", "world"), "hello ");
-// /* 2 */ ASSERT_EQ_STR(ft_strtrim("hello world", "hello"), " world");
-// /* 3 */ ASSERT_EQ_STR(ft_strtrim("hello world", ""), "hello world");
-// /* 4 */ ASSERT_EQ_STR(ft_strtrim("", ""), "");
-// /* 5 */ ASSERT_EQ_STR(ft_strtrim("    hello world     ", " "), "hello w
-// orld");
-// /* 6 */ ASSERT_EQ_STR(ft_strtrim(" \n\t\r    hello \n\t\r world     \r\
-// t\n\t \r\n", " \n\t\r"), "hello \n\t\r world");
-// /* 7 */ ASSERT_EQ_STR(ft_strtrim("hello world", "abcdefghijklmnopqrstuv
-// wxyz"), " ");
-// }
