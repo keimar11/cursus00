@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*overflow(long int n, const char c)
+static char	*overflow(long int n, const char c)
 {
 	long int	jdg1;
 	long int	jdg2;
@@ -26,7 +26,7 @@ char	*overflow(long int n, const char c)
 	return ("safe");
 }
 
-char	*underflow(long int n, const char c)
+static char	*underflow(long int n, const char c)
 {
 	long int	jdg1;
 	long int	jdg2;

@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 21:51:17 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/18 23:47:34 by marvin           ###   ########.fr       */
+/*   Updated: 2022/11/02 22:27:22 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (new);
 }
 
-// int	main(void)
-// {
-// 	printf ("%s\n", ft_strjoin("Hola", ""));
-// }

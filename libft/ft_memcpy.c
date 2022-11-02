@@ -27,14 +27,3 @@ void	*ft_memcpy(void *s1, const void *s2, size_t n)
 		*str++ = *src++;
 	return (s1);
 }
-
-// int main ()
-// {
-// 	const char src[50] = "http://www.tutorialspoint.com";
-// 	char dest[50];
-// 	strcpy(dest,"Heloooo!!");
-// 	printf("Before memcpy dest = %s\n", dest);
-// 	ft_memcpy(dest, src, strlen(src)+1);
-// 	printf("After memcpy dest = %s\n", dest);
-// 	return(0);
-// }

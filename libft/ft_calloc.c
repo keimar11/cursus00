@@ -33,14 +33,5 @@ void	*ft_calloc(size_t n, size_t size)
 	return (save);
 }
 
-// int	main()
-// {
-// 	int i, *p, *q;
-// 	p = (int *)ft_calloc((size_t)__SIZE_MAX__ / 10 + (size_t)1, 10);
-// 	free(p);
-// 	q = (int *)calloc((size_t)__SIZE_MAX__ / 10 + (size_t)1, 10);
-// 	return 0;
-// }
-
 // (n * size > __SIZE_MAX__) -> n * size の時点でSIZE＿MAXを超えてしまう。処理できない。だから
 // (n > SIZE_MAX / size) -> にする。

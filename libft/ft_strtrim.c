@@ -28,11 +28,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ft_strlcpy (str, &s1[bgn], end - bgn + 1);
 	return (str);
 }
-
-// int main()
-// {
-// 	char s1[] = ",,,, ,,worlt world,,,,,,,,, ,,";
-// 	char set[] = ",";
-// 	printf("%s", ft_strtrim(s1, set));
-// 	return 0;
-// }

@@ -24,11 +24,3 @@ void	ft_bzero(void *s, size_t n)
 	}
 	return ;
 }
-
-// int main(void)
-// {
-// 	void	*s;
-
-// 	s = "keity";
-// 	ft_bzero(s, 3);
-// }

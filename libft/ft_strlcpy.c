@@ -27,14 +27,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	dst[i] = 0;
 	return (ft_strlen ((char *)src));
 }
-
-// int	main(void)
-// {
-//  char c[256] = "42tokyo";
-//  printf ("%ld\n", ft_strlcpy(NULL  , "aiueo", 0));  // 5
-//  printf ("%ld\n", ft_strlcpy(NULL  , "aiueo", 2));  // sgf
-//  printf ("%ld\n", ft_strlcpy(c     , NULL   , 0));  // sgf
-//  printf ("%ld\n", ft_strlcpy(c     , NULL   , 0));  // sgf
-//  printf ("%ld\n", ft_strlcpy(NULL  , NULL   , 0));  // sgf
-//  printf ("%ld\n", ft_strlcpy(NULL  , NULL   , 2));  // sgf
-// }

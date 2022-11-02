@@ -6,13 +6,13 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 21:26:14 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/23 18:33:10 by marvin           ###   ########.fr       */
+/*   Updated: 2022/11/02 22:24:01 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*str_rev(char *str)
+static char	*str_rev(char *str)
 {
 	char	*scr;
 	int		cnt;
@@ -30,7 +30,7 @@ char	*str_rev(char *str)
 	return (scr);
 }
 
-char	*str_fit(char *str, int n)
+static char	*str_fit(char *str, int n)
 {
 	int	i;
 	int	flag;
@@ -57,7 +57,7 @@ char	*str_fit(char *str, int n)
 	return (str);
 }
 
-int	str_cnt(int n)
+static int	str_cnt(int n)
 {
 	int	cnt;
 

@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 23:36:51 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/18 23:52:21 by marvin           ###   ########.fr       */
+/*   Updated: 2022/11/02 22:27:45 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,20 +31,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	array[i] = 0;
 	return (array);
 }
-
-// 
-
-// char f(unsigned int i, char c)
-// {
-// 	if (c >= 'a' && c <= 'z')
-// 		c = c - 32;
-// 	return (c);
-// }
-
-// int main()
-// {
-// 	char str1[] = "I am Iron man.";
-// 	char* str2;
-// 	str2 = ft_strmapi(str1, *f);
-// 	printf("%s\n", str2);
-// }

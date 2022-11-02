@@ -12,15 +12,6 @@
 
 #include "libft.h"
 
-// void	*ft_memset(void *s, int c, int n)
-// {
-// 	while (n-- > 0)
-// 	{
-// 		*(char *)s++ = c;
-// 	}
-// 	return (s);
-// }
-
 void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char	*p;
@@ -32,12 +23,3 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
-
-// int main(void)
-// {
-//  char str[] = "train";
-//  printf("%s\n", str);
-//  ft_memset(str, 'z', 3);
-//  printf("%s", str);
-//  return 0;
-// }

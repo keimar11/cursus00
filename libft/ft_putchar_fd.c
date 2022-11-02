@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 00:01:06 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/18 23:42:12 by marvin           ###   ########.fr       */
+/*   Updated: 2022/11/02 22:25:55 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,3 @@ void	ft_putchar_fd(char c, int fd)
 	write (fd, &c, 1);
 }
 
-// int	main(void)
-// {
-// 	ft_putchar_fd ('c', 1);
-// }

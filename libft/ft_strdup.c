@@ -31,8 +31,3 @@ char	*ft_strdup(const char *str)
 	scr[i] = 0;
 	return (scr);
 }
-
-// int	main(void)
-// {
-// 	printf("%p", ft_strdup(""));
-// }

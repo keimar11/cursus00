@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*ft_strndup(char const *src, int n)
+static char	*ft_strndup(char const *src, int n)
 {
 	char	*str;
 	int		i;
@@ -32,7 +32,7 @@ char	*ft_strndup(char const *src, int n)
 	return (str);
 }
 
-int	arr_cnt(char const *s, char c)
+static int	arr_cnt(char const *s, char c)
 {
 	int	i;
 	int	cnt;

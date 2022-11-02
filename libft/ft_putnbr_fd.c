@@ -6,13 +6,13 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 00:14:42 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/18 23:42:46 by marvin           ###   ########.fr       */
+/*   Updated: 2022/11/02 22:26:23 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	number(int a, char *arr, int i, int fd)
+static void	number(int a, char *arr, int i, int fd)
 {
 	int	b;
 
@@ -55,8 +55,3 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	number (a, arr, i, fd);
 }
-
-// int	main(void)
-// {
-// 	ft_putnbr_fd (11, 1);
-// }

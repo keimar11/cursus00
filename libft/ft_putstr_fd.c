@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 00:06:59 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/18 23:42:51 by marvin           ###   ########.fr       */
+/*   Updated: 2022/11/02 22:26:27 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,3 @@ void	ft_putstr_fd(char *s, int fd)
 		i++;
 	}
 }
-
-// int	main(void)
-// {
-// 	ft_putstr_fd ("I am a Dinamite!!!!", 1);
-// }

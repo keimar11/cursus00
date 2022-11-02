@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 00:12:41 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/18 23:42:20 by marvin           ###   ########.fr       */
+/*   Updated: 2022/11/02 22:26:00 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,3 @@ void	ft_putendl_fd(char *s, int fd)
 	}
 	write(fd, "\n", 1);
 }
-
-// int	main(void)
-// {
-// 	ft_putendl_fd ("KEITO", 1);
-// }
