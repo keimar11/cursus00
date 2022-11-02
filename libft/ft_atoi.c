@@ -57,9 +57,9 @@ int	ft_atoi(const char *str)
 	nb = 0;
 	while (*str >= 48 && *str <= 57)
 	{
-		if (overflow(nb, *str) == NULL)
+		if (m > 0 && overflow(nb, *str) == NULL)
 			return ((int)LONG_MAX);
-		if (m == -1 && underflow(-1 * nb, *(str + 1)) == NULL)
+		if (m < 0 && underflow(-1 * nb, *(str + 1)) == NULL)
 			return ((int)LONG_MIN);
 		nb = nb * 10 + (*str++ - '0');
 	}
@@ -75,6 +75,8 @@ int	ft_atoi(const char *str)
 // 	printf ("Orig: %d\n", atoi ("9223372036854775808"));
 // 	printf ("Mine: %d\n", ft_atoi ("-9223372036854775809"));
 // 	printf ("Orig: %d\n", atoi ("-9223372036854775809"));
+// 	printf ("Mine: %d\n", ft_atoi ("-9223372036854775808"));
+// 	printf ("Orig: %d\n", atoi ("-9223372036854775808"));
 // 	printf ("Mine: %d\n", ft_atoi ("-922337"));
 // 	printf ("Orig: %d\n", atoi ("-922337"));
 
