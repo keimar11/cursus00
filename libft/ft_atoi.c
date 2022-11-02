@@ -75,18 +75,18 @@ int	ft_atoi(const char *str)
 	return (m * nb);
 }
 
-#include <stdio.h>
-int	main(void)
-{
-	printf ("Mine: %d\n", ft_atoi (" \n \f \t \r    -9223"));
-	printf ("Orig: %d\n", atoi ("        -9223"));
-	printf ("Mine: %d\n", ft_atoi ("9223372036854775808"));
-	printf ("Orig: %d\n", atoi ("9223372036854775808"));
-	printf ("Mine: %d\n", ft_atoi ("-9223372036854775809"));
-	printf ("Orig: %d\n", atoi ("-9223372036854775809"));
-	printf ("Mine: %d\n", ft_atoi ("-922337"));
-	printf ("Orig: %d\n", atoi ("-922337"));
-}
+// #include <stdio.h>
+// int	main(void)
+// {
+// 	printf ("Mine: %d\n", ft_atoi (" \n \f \t \r    -9223"));
+// 	printf ("Orig: %d\n", atoi ("        -9223"));
+// 	printf ("Mine: %d\n", ft_atoi ("9223372036854775808"));
+// 	printf ("Orig: %d\n", atoi ("9223372036854775808"));
+// 	printf ("Mine: %d\n", ft_atoi ("-9223372036854775809"));
+// 	printf ("Orig: %d\n", atoi ("-9223372036854775809"));
+// 	printf ("Mine: %d\n", ft_atoi ("-922337"));
+// 	printf ("Orig: %d\n", atoi ("-922337"));
+// }
 
 // [test 27] ASSERT_EQ_I failed: ("-1") is not equal to expected ("0"). func main at file srcs/test_ft_atoi.c, line 44
 // [test 28] ASSERT_EQ_I failed: ("0") is not equal to expected ("-1"). func main at file srcs/test_ft_atoi.c, line 45
