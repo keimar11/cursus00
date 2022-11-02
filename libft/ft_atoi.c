@@ -12,13 +12,48 @@
 
 #include "libft.h"
 
+char	*overflow(size_t n, const char c)
+{
+	size_t	jdg1;
+	size_t	jdg2;
+
+	jdg1 = LONG_MAX / 10;
+	jdg2 = LONG_MAX % 10;
+	if (n > jdg1)
+		return (NULL);
+	if (n == jdg1 && c - 48 > jdg2)
+		return (NULL);
+	return ("safe");
+}
+
+char	*underflow(size_t n, const char c)
+{
+	size_t	jdg1;
+	size_t	jdg2;
+
+	printf ("%ld\n", n);
+	printf ("%c\n", c);
+	jdg1 = LONG_MIN / 10;
+	jdg2 = LONG_MIN % 10;
+	printf ("%ld\n", jdg1);
+	printf ("%ld\n", jdg2);
+
+	if (n < jdg1){
+		printf ("yah\n");
+		return (NULL);
+	}
+	if (n == jdg1 && (c - 48) * (-1) < jdg2){
+		printf ("yeah\n");
+		return (NULL);
+	}
+	return ("safe");
+}
+
 int	ft_atoi(const char *str)
 {
 	size_t	m;
 	size_t	nb;
 
-	if (str == NULL)
-		return (0);
 	while (*str == ' ' || (*str >= 9 && *str <= 13))
 		str++;
 	m = 1;
@@ -29,31 +64,29 @@ int	ft_atoi(const char *str)
 		str++;
 	}
 	nb = 0;
-	while (*str >= '0' && *str <= '9')
+	while (*str >= 48 && *str <= 57)
+	{
+		if (overflow(nb, *str) == NULL)
+			return ((int)LONG_MAX);
+		if (m == -1 && underflow(-1 * nb, *str) == NULL)
+			return ((int)LONG_MIN);
 		nb = nb * 10 + (*str++ - '0');
+	}
 	return (m * nb);
 }
 
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	printf ("Mine: %d\n", ft_atoi (" \n \f \t \r    -9223"));
-// 	printf ("Orig: %d\n", atoi ("        -9223"));
-// 	printf ("Mine: %d\n", ft_atoi ("9223372036854775808"));
-// 	printf ("Orig: %d\n", atoi ("9223372036854775808"));
-// 	printf ("Mine: %d\n", ft_atoi ("-9223372036854775809"));
-// 	printf ("Orig: %d\n", atoi ("-9223372036854775809"));
-// 	printf ("Mine: %d\n", ft_atoi ("-922337"));
-// 	printf ("Orig: %d\n", atoi ("-922337"));
-// 	printf("LLONG_MAX: %ld\n", LLONG_MAX);
-// 	printf("LLONG_MIN: %ld\n", LLONG_MIN);
-// 	printf("MAX/10: %ld\n", LLONG_MAX/10);
-// 	printf("MAX%%10: %ld\n", LLONG_MAX%10);
-// 	printf("MIN/10: %ld\n", LLONG_MIN/10);
-// 	printf("MIN%%10: %ld\n", LLONG_MIN%10);
-// 	printf("-11/10 = %d\n", -11/10);
-// 	printf("-11%%10 = %d\n", -11%10);
-// }
+#include <stdio.h>
+int	main(void)
+{
+	printf ("Mine: %d\n", ft_atoi (" \n \f \t \r    -9223"));
+	printf ("Orig: %d\n", atoi ("        -9223"));
+	printf ("Mine: %d\n", ft_atoi ("9223372036854775808"));
+	printf ("Orig: %d\n", atoi ("9223372036854775808"));
+	printf ("Mine: %d\n", ft_atoi ("-9223372036854775809"));
+	printf ("Orig: %d\n", atoi ("-9223372036854775809"));
+	printf ("Mine: %d\n", ft_atoi ("-922337"));
+	printf ("Orig: %d\n", atoi ("-922337"));
+}
 
 // [test 27] ASSERT_EQ_I failed: ("-1") is not equal to expected ("0"). func main at file srcs/test_ft_atoi.c, line 44
 // [test 28] ASSERT_EQ_I failed: ("0") is not equal to expected ("-1"). func main at file srcs/test_ft_atoi.c, line 45
@@ -69,28 +102,11 @@ int	ft_atoi(const char *str)
 // /* 36. ULONG_MAX - 1 */ ASSERT_EQ_I(atoi("18446744073709551614"), ft_atoi("18446744073709551614"));
 // /* 37. SIZE_MAX - 1 */ ASSERT_EQ_I(atoi("18446744073709551614"), ft_atoi("18446744073709551614"));
 
-// size_t	dmax;
-// size_t	smax;
-// size_t	dmin;
-// size_t	smin;
-// dmax = LONG_MAX / 10;
-// smax = LONG_MAX % 10;
-// dmin = LONG_MIN / 10;
-// smin = LONG_MIN % 10;
-// printf ("%d\n", nb / 10);
-// if (nb / 10 > dmax){
-// 	printf ("yeah\n");
-// 	return ((int)LONG_MAX);
-// }
-// if (nb / 10 == dmax && (*str - '0') > smax){
-// 	printf ("yea\n");
-// 	return ((int)LONG_MAX);
-// }
-// if (nb / 10 < dmin){
-// 	printf ("yah\n");
-// 	return ((int)LONG_MIN);
-// }
-// if (nb / 10 == dmin && (*str - '0') < smin){
-// 	printf ("yh\n");
-// 	return ((int)LONG_MIN);
-// }
+	// printf("LONG_MAX: %ld\n", LONG_MAX);
+	// printf("LONG_MIN: %ld\n", LONG_MIN);
+	// printf("MAX/10: %ld\n", LONG_MAX/10);
+	// printf("MAX%%10: %ld\n", LONG_MAX%10);
+	// printf("MIN/10: %ld\n", LONG_MIN/10);
+	// printf("MIN%%10: %ld\n", LONG_MIN%10);
+	// printf("-11/10 = %d\n", -11/10);
+	// printf("-11%%10 = %d\n", -11%10);
