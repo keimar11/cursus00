@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 01:29:37 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/17 01:29:37 by marvin           ###   ########.fr       */
+/*   Updated: 2022/11/03 14:01:37 by keitakah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,21 +65,3 @@ int	ft_atoi(const char *str)
 	}
 	return (m * nb);
 }
-
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	printf ("Mine: %d\n", ft_atoi (" \n \f \t \r    -9223"));
-// 	printf ("Orig: %d\n", atoi ("        -9223"));
-// 	printf ("Mine: %d\n", ft_atoi ("9223372036854775808"));
-// 	printf ("Orig: %d\n", atoi ("9223372036854775808"));
-// 	printf ("Mine: %d\n", ft_atoi ("-9223372036854775809"));
-// 	printf ("Orig: %d\n", atoi ("-9223372036854775809"));
-// 	printf ("Mine: %d\n", ft_atoi ("-9223372036854775808"));
-// 	printf ("Orig: %d\n", atoi ("-9223372036854775808"));
-// 	printf ("Mine: %d\n", ft_atoi ("-922337"));
-// 	printf ("Orig: %d\n", atoi ("-922337"));
-
-// 	printf("MIN/10: %ld\n", LONG_MIN/10);
-// 	printf("MIN%%10: %ld\n", LONG_MIN%10);
-// }

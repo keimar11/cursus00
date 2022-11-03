@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 21:51:17 by marvin            #+#    #+#             */
-/*   Updated: 2022/11/02 22:27:22 by marvin           ###   ########.fr       */
+/*   Updated: 2022/11/02 22:33:28 by keitakah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	new[i] = 0;
 	return (new);
 }
-
