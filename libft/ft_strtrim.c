@@ -25,6 +25,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (s1[end - 1] && ft_strchr(set, s1[end - 1]))
 		end--;
 	str = malloc(sizeof(char) * (end - bgn + 1));
+	if (!str)
+		return (NULL);
 	ft_strlcpy (str, &s1[bgn], end - bgn + 1);
 	return (str);
 }

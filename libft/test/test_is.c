@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   test_is.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/17 01:47:50 by marvin            #+#    #+#             */
-/*   Updated: 2022/11/03 18:05:42 by marvin           ###   ########.fr       */
+/*   Created: 2022/11/03 14:55:07 by marvin            #+#    #+#             */
+/*   Updated: 2022/11/03 14:55:07 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-int	ft_isalnum(int c)
+int	main(void)
 {
-	return (ft_isalpha(c) || ft_isdigit(c));
+	int	i = 128;
+	while (i--)
+	{
+		printf("Ascii %d\n", i);
+		printf("%d\n", ft_isalpha(i));
+		printf("%d\n", ft_isdigit(i));
+		printf("%d\n", ft_isalnum(i));
+		printf("%d\n", ft_isprint(i));
+		printf("%d\n", ft_isascii(i));
+	}
 }
