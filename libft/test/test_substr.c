@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   test_substr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/15 21:41:43 by marvin            #+#    #+#             */
-/*   Updated: 2022/11/03 21:36:38 by marvin           ###   ########.fr       */
+/*   Created: 2022/11/03 21:23:20 by marvin            #+#    #+#             */
+/*   Updated: 2022/11/03 21:23:20 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
+#include <stdio.h>
+#include <string.h>
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+int	main(void)
 {
-	char	*sub;
-
-	if ((size_t)start > ft_strlen(s))
-		return (NULL);
-	sub = (char *)malloc(sizeof(char) * len + 1);
-	if (!sub)
-		return (NULL);
-	ft_strlcpy(sub, s + start, len);
-	return (sub);
+	char	*ret = ft_substr("01234", 3, 5);
+	printf ("%s\n", ret);
+	free(ret);
 }
-
-// #19 そもそもstartがsをオーバーしてたらコピーできない

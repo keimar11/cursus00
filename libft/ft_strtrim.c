@@ -19,11 +19,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 
 	bgn = 0;
+	end = ft_strlen(s1);
 	while (s1[bgn] && ft_strchr(set, s1[bgn]))
 		bgn++;
-	end = ft_strlen(s1);
 	while (s1[end - 1] && ft_strchr(set, s1[end - 1]))
 		end--;
+	if (end == 0)
+		return (NULL);
 	str = malloc(sizeof(char) * (end - bgn + 1));
 	if (!str)
 		return (NULL);
