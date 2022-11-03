@@ -18,8 +18,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	sl;
 
 	sl = ft_strlen (src);
-	// if (dst == NULL)
-	// 	return (sl);
+	if (dst == NULL)
+		return (sl);
 	dl = ft_strlen (dst);
 	if (dl >= dstsize)
 		return (sl + dstsize);
@@ -27,3 +27,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	ft_strlcpy (dst, src, dstsize - dl);
 	return (dl + sl);
 }
+
+// dst = NULL => Segmentation fault;
+// ?Needless to return or to return (sizeof(sl));
+// I think we have to return (sl);
