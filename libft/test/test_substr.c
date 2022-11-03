@@ -16,7 +16,7 @@
 
 int	main(void)
 {
-	char	*ret = ft_substr("01234", 3, 5);
+	char	*ret = ft_substr("libft-tokyo-42", 3, 5);
 	printf ("%s\n", ret);
 	free(ret);
 }
