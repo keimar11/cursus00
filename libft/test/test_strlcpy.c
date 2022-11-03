@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   test_strlcpy.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/17 01:52:46 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/17 01:52:46 by marvin           ###   ########.fr       */
+/*   Created: 2022/11/04 00:45:45 by marvin            #+#    #+#             */
+/*   Updated: 2022/11/04 00:45:45 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
+#include <stdio.h>
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
-{
-	size_t	src_l;
+// int	main(void)
+// {
+// 	char		dst[] = "ace";
+// 	const char	src[] = "abcde";
+// 	printf("%d\n", ft_strlcpy(dst, src, 6));
+// 	printf("%s\n", dst);
+// 	dst[4] = "ace";
+// 	printf("%d\n", ft_strlcpy(dst, src, 7));
+// 	printf("%s\n", dst);
+// }
 
-	src_l = ft_strlen((char *)src);
-	if (size == 0)
-		return (src_l);
-	while ((size-- - 1))
-		*dst++ = *src++;
-	*dst = '\0';
-	return (src_l);
-}
+// this main() is going well, but it's wrong because we have to declare dst & src as char *;
