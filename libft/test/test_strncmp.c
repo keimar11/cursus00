@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_is.c                                          :+:      :+:    :+:   */
+/*   test_strncmp.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/03 14:55:07 by marvin            #+#    #+#             */
-/*   Updated: 2022/11/03 14:55:07 by marvin           ###   ########.fr       */
+/*   Created: 2022/11/04 00:14:57 by marvin            #+#    #+#             */
+/*   Updated: 2022/11/04 00:14:57 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,10 @@
 
 int	main(void)
 {
-	int	i = 128;
-	while (i--)
-	{
-		printf("Ascii %d\n", i);
-		printf("%d\n", ft_isalpha(i));
-		printf("%d\n", ft_isdigit(i));
-		printf("%d\n", ft_isalnum(i));
-		printf("%d\n", ft_isprint(i));
-		printf("%d\n", ft_isascii(i));
-	}
+	printf ("%d\n", strncmp("", "012", 3));
+	printf ("%d\n", ft_strncmp("", "012", 3));
+	printf ("%d\n", strncmp("012", "", 3));
+	printf ("%d\n", ft_strncmp("012", "", 3));
+	printf ("%d\n", strncmp("321", "012", 0));
+	printf ("%d\n", ft_strncmp("321", "012", 0));
 }
