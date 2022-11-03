@@ -35,7 +35,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	src_l = ft_strlen((char *)src);
 	if (size == 0)
 		return (src_l);
-	while (i++ < (size - 1))
+	while ((size-- - 1))
 		*dst++ = *src++;
 	*dst = '\0';
 	return (src_l);
