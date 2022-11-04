@@ -28,6 +28,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	return (dl + sl);
 }
 
+// dstsize: size of dst to be located == size we're able to access
 // dst = NULL => Segmentation fault;
 // ?Needless to return or to return (sizeof(sl));
 // I think we have to return (sl);
+// ?#25 return(sl + dstsize) or (dstsize);
