@@ -16,7 +16,15 @@
 
 int	main(void)
 {
-	char	*ret = ft_substr("libft-tokyo-42", 3, 5);
-	printf ("%s\n", ret);
+	char *str = "01234";
+	size_t size = 10;
+	char *ret = ft_substr(str, 10, size);
+
+	if (!strncmp(ret, "", 1))
+	{
 	free(ret);
+	printf("TEST_SUCCESS");
+	}
+	free(ret);
+	printf("TEST_FAILED");
 }

@@ -20,14 +20,22 @@ char	*ft_strdup(const char *str)
 
 	strl = ft_strlen (str);
 	scr = (char *)malloc (sizeof(char) * (strl + 1));
-	if (scr == 0)
-		return (0);
+	if (!scr)
+		return (NULL);
 	i = 0;
 	while (str[i])
 	{
 		scr[i] = str[i];
 		i++;
 	}
-	scr[i] = 0;
+	scr[i] = '\0';
 	return (scr);
 }
+
+// #include <stdio.h>
+// int	main(void)
+// {
+// 	char *dst = ft_strdup(NULL);
+// 	printf("%s\n", dst);
+// 	free(dst);
+// }

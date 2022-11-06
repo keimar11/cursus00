@@ -72,19 +72,19 @@ char	**ft_split(char const *s, char c)
 	}
 	return (str);
 }
-/*
-int	main(void)
-{
-	char	**arr;
-	int		i;
 
-	arr = ft_split(",,,hello,,,world,,,42,,,tokyo,,,,,,", ',');
-	i = 0;
-	while (arr[i] != 0)
-	{
-		printf("%s\n", arr[i]);
-		i++;
-	}
-	free(arr);
-}
-*/
+// #include <stdio.h>
+// int	main(void)
+// {
+// 	char	**arr;
+// 	int		i;
+
+// 	arr = ft_split("1-2-3-4-5-6-7-8--8-8--8-4------4--4", '-');
+// 	i = 0;
+// 	while (arr[i] != 0)
+// 	{
+// 		printf("%s\n", arr[i]);
+// 		i++;
+// 	}
+// 	free(arr);
+// }
