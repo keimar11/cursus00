@@ -12,19 +12,21 @@
 
 #include "../libft.h"
 #include <stdio.h>
-#include <string.h>
-
-int	main(void)
+int	main()
 {
-	char *str = "01234";
-	size_t size = 10;
-	char *ret = ft_substr(str, 10, size);
-
-	if (!strncmp(ret, "", 1))
-	{
-	free(ret);
-	printf("TEST_SUCCESS");
-	}
-	free(ret);
-	printf("TEST_FAILED");
+	char *dst = ft_substr("\0", 0, 0);
+	printf("%s\n", dst);
+	free(dst);
+	printf("%zu\n", ft_strlen("\0"));
 }
+
+/*
+DEAL WITH '\0'
+	len = strlen(substr);
+	substr("\0", 0, 1) -> Return (NULL);
+	if not, would Return ("\0\0") : Wrong;
+	substr("\0", 0, 0) -> Return ("\0") : Correct;
+DEAL WITH OVERLAP
+	start + len > strlen(s) -> ovelap
+*/
+
