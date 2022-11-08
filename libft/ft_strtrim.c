@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 01:27:30 by marvin            #+#    #+#             */
-/*   Updated: 2022/11/04 17:32:01 by keitakah         ###   ########.fr       */
+/*   Updated: 2022/11/08 20:37:30 by keitakah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 		bgn++;
 	while (s1[end - 1] && ft_strchr(set, s1[end - 1]))
 		end--;
+	if (end == 0)
+		return (ft_strdup(""));
 	str = malloc(sizeof(char) * (end - bgn + 1));
 	if (!str)
 		return (NULL);
-	if (end == 0)
-	{
-		str = "";
-		return (str);
-	}
 	ft_strlcpy (str, &s1[bgn], end - bgn + 1);
 	return (str);
 }

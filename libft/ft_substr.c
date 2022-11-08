@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 21:41:43 by marvin            #+#    #+#             */
-/*   Updated: 2022/11/04 18:22:52 by marvin           ###   ########.fr       */
+/*   Updated: 2022/11/08 20:27:26 by keitakah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*sub;
 
 	if ((size_t)start >= ft_strlen(s))
-		return (NULL);
+		return (ft_strdup(""));
 	sub = (char *)malloc(sizeof(char) * len + 1);
 	if (sub == NULL)
 		return (NULL);

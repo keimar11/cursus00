@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 01:53:06 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/17 01:53:06 by marvin           ###   ########.fr       */
+/*   Updated: 2022/11/08 23:42:52 by keitakah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,56 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	i;
 	size_t	j;
 	size_t	k;
-	size_t	len_l;
+//	size_t	bl;
+	size_t	ll;
 
-	if (*little == 0)
+	if (*little == '\0' && len == 0)
 		return ((char *)big);
-	len_l = ft_strlen(little);
+//	bl = ft_strlen(big);
+	ll = ft_strlen(little);
 	k = 0;
-	while (big != 0 && k < len)
+	while (k < len && *big)
 	{
 		i = 0;
 		j = k;
-		while (big[i] == little[i] && j++ < len)
+		while (big[i] == little[i] && big[i] != '\0' && j++ < len)
 			i++;
-		if (i == len_l)
+		if (i == ll)
 			return ((char *)big);
 		big++;
 		k++;
 	}
 	return (0);
 }
+
+/*
+#include <stdio.h>
+#include <string.h>
+void	ASSERT_EQ_PTR(char *mine, char *orig);
+
+int main()
+{
+	char *str = "libft-test-tokyo";
+	int	i = 0;
+	ASSERT_EQ_PTR(ft_strnstr(str, "", i), strnstr(str, "", i));
+	ASSERT_EQ_PTR(ft_strnstr(str, "libft-test-tokyo", i), strnstr(str, "libft-test-tokyo", i));
+	ASSERT_EQ_PTR(ft_strnstr(str, "libft", i), strnstr(str, "libft", i));
+	ASSERT_EQ_PTR(ft_strnstr(str, "test", i), strnstr(str, "test", i));
+	ASSERT_EQ_PTR(ft_strnstr(str, "tokyo", i), strnstr(str, "tokyo", i));
+	ASSERT_EQ_PTR(ft_strnstr(str, "libft~", i), strnstr(str, "libft~", i));
+	ASSERT_EQ_PTR(ft_strnstr(str, "z", i), strnstr(str, "z", i));
+	return 0;
+}
+
+void	ASSERT_EQ_PTR(char *mine, char *orig)
+{
+	if (mine == orig)
+		printf("\nCLEAR\n");
+	else
+	{
+		printf("\nOUT\n");
+	}
+	printf("%s\n", mine);
+	printf("%s\n", orig);
+}
+*/
