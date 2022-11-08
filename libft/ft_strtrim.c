@@ -6,29 +6,32 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 01:27:30 by marvin            #+#    #+#             */
-/*   Updated: 2022/11/02 01:27:30 by marvin           ###   ########.fr       */
+/*   Updated: 2022/11/04 17:32:01 by keitakah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;
 	size_t	bgn;
 	size_t	end;
 
-	if (!s1 || !set)
-		return (NULL);
 	bgn = 0;
 	end = ft_strlen(s1);
 	while (s1[bgn] && ft_strchr(set, s1[bgn]))
 		bgn++;
 	while (s1[end - 1] && ft_strchr(set, s1[end - 1]))
 		end--;
+	str = malloc(sizeof(char) * (end - bgn + 1));
+	if (!str)
+		return (NULL);
 	if (end == 0)
-		str = ft_substr(s1, bgn, end);
-	else
-		str = ft_substr(s1, bgn, end - bgn);
+	{
+		str = "";
+		return (str);
+	}
+	ft_strlcpy (str, &s1[bgn], end - bgn + 1);
 	return (str);
 }

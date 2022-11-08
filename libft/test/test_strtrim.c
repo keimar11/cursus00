@@ -15,14 +15,5 @@
 
 int	main(void)
 {
-	char	*str;
-	char	*src;
-
-	str = ft_strtrim("abc", "c");
-	printf("%s\n", str);
-	free(str);
-	src = ft_strtrim("   abc", "\0");
-	printf("%s\n", str);
-	free(src);
-	printf("%d\n", (' ' == '\0'));
+	printf("%s\n", ft_strtrim("aaabbabcbabcca", "abc"));
 }

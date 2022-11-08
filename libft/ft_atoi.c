@@ -35,7 +35,7 @@ static char	*underflow(long int n, const char c)
 	jdg2 = LONG_MIN % 10;
 	if (n < jdg1)
 		return (NULL);
-	if (n == jdg1 && (c - 48) * (-1) < jdg2)
+	if (n == jdg1 / 10 && (c - 48) * (-1) < jdg2)
 		return (NULL);
 	return ("safe");
 }
