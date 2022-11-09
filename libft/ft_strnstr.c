@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 01:53:06 by marvin            #+#    #+#             */
-/*   Updated: 2022/11/08 23:42:52 by keitakah         ###   ########.fr       */
+/*   Updated: 2022/11/09 20:49:51 by keitakah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,26 +17,15 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	i;
 	size_t	j;
 	size_t	k;
-<<<<<<< HEAD
-	size_t	bl;
-=======
-//	size_t	bl;
->>>>>>> dded786be97a5f080c69c19cb391da621f71b1c9
 	size_t	ll;
 
-	if (*little == '\0' && len == 0)
+	if (!big && len == 0)
+		return (NULL);
+	if (*little == '\0' && (*big == '\0' || len == 0))
 		return ((char *)big);
-<<<<<<< HEAD
-	bl = ft_strlen(big);
 	ll = ft_strlen(little);
 	k = 0;
-	while (k < bl && k < len)
-=======
-//	bl = ft_strlen(big);
-	ll = ft_strlen(little);
-	k = 0;
-	while (k < len && *big)
->>>>>>> dded786be97a5f080c69c19cb391da621f71b1c9
+	while (*big && k < len)
 	{
 		i = 0;
 		j = k;
