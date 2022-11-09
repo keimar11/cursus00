@@ -12,26 +12,6 @@
 
 #include "libft.h"
 
-// static char	*ft_strndup(char const *src, int n)
-// {
-// 	char	*str;
-// 	int		i;
-
-// 	if (n == 0)
-// 		return (NULL);
-// 	str = (char *)malloc(sizeof(char) * (n + 1));
-// 	if (!str)
-// 		return (NULL);
-// 	i = 0;
-// 	while (n-- > 0)
-// 	{
-// 		str[i] = src[i];
-// 		i++;
-// 	}
-// 	str[i] = 0;
-// 	return (str);
-// }
-
 static int	arr_cnt(char const *s, char c)
 {
 	int	i;
@@ -56,7 +36,7 @@ char	**ft_split(char const *s, char c)
 	int		j;
 	int		save;
 
-	str = (char **)ft_calloc((arr_cnt(s, c) + 1), sizeof(char *));
+	str = (char **)ft_calloc((arr_cnt(s, c)), sizeof(char *));
 	if (!str)
 		return (NULL);
 	i = 0;
@@ -68,7 +48,6 @@ char	**ft_split(char const *s, char c)
 		save = i;
 		while (s[i] != c && s[i] != 0)
 			i++;
-		// str[j++] = ft_strndup (&s[save], i - save);
 		str[j++] = ft_substr(s, save, i - save);
 	}
 	return (str);
