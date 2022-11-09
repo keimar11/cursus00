@@ -17,19 +17,21 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	i;
 	size_t	j;
 	size_t	k;
-	size_t	len_l;
+	size_t	bl;
+	size_t	ll;
 
-	if (*little == 0)
+	if (*little == '\0' && len == 0)
 		return ((char *)big);
-	len_l = ft_strlen(little);
+	bl = ft_strlen(big);
+	ll = ft_strlen(little);
 	k = 0;
-	while (big != 0 && k < len)
+	while (k < bl && k < len)
 	{
 		i = 0;
 		j = k;
 		while (big[i] == little[i] && j++ < len)
 			i++;
-		if (i == len_l)
+		if (i == ll)
 			return ((char *)big);
 		big++;
 		k++;
