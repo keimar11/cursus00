@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 16:12:02 by marvin            #+#    #+#             */
-/*   Updated: 2022/11/11 16:12:02 by marvin           ###   ########.fr       */
+/*   Updated: 2022/11/11 16:14:23 by keitakah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	str_cnt(int n)
 	return (cnt);
 }
 
-static char	*str_min_fit(char *str, int n)
+static char	*str_min_fit(char *str)
 {
 	int	i;
 	char	*min;
@@ -70,7 +70,7 @@ char	*ft_itoa(int n)
 	if (str == NULL)
 		return (NULL);
 	if (n == INT_MIN)
-		str = str_min_fit(str, n);
+		str = str_min_fit(str);
 	else
 		str = str_fit(str, n);
 	return (str);
