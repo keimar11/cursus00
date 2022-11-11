@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 00:12:41 by marvin            #+#    #+#             */
-/*   Updated: 2022/11/02 22:26:00 by marvin           ###   ########.fr       */
+/*   Updated: 2022/11/11 18:08:15 by keitakah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,6 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-		write (fd, &s[i++], 1);
+	ft_putstr_fd(s, fd);
 	write(fd, "\n", 1);
 }
