@@ -16,9 +16,9 @@ static int	str_cnt(int n)
 {
 	int	cnt;
 
+	cnt = 0;
 	if (n == 0)
 		return (1);
-	cnt = 0;
 	if (n < 0)
 		cnt++;
 	while (n != 0)
@@ -67,7 +67,7 @@ char	*ft_itoa(int n)
 	char	*str;
 
 	str = (char *)malloc(sizeof(char) * str_cnt(n) + 1);
-	if (str == NULL)
+	if (!str)
 		return (NULL);
 	if (n == INT_MIN)
 		str = str_min_fit(str);

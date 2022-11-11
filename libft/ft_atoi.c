@@ -45,16 +45,16 @@ int	ft_atoi(const char *str)
 	int			m;
 	long int	nb;
 
+	m = 1;
+	nb = 0;
 	while (*str == ' ' || (*str >= 9 && *str <= 13))
 		str++;
-	m = 1;
 	if (*str == '-' || *str == '+')
 	{
 		if (*str == '-')
 			m *= -1;
 		str++;
 	}
-	nb = 0;
 	while (*str >= 48 && *str <= 57)
 	{
 		if (m > 0 && overflow(nb, *str) == NULL)
@@ -65,3 +65,7 @@ int	ft_atoi(const char *str)
 	}
 	return (m * nb);
 }
+
+/*
+	overflow() & underflow()はLONGMAXのときの挙動
+*/
