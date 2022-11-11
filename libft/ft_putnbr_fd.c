@@ -34,11 +34,11 @@ static void	putnbr_exc_fd(int n, int fd)
 	return ;
 }
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	char	arr[300];
 	int		idx;
-	
+
 	if (n == INT_MIN || n == 0)
 	{
 		putnbr_exc_fd(n, fd);

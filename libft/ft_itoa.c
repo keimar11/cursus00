@@ -31,7 +31,7 @@ static int	str_cnt(int n)
 
 static char	*str_min_fit(char *str)
 {
-	int	i;
+	int		i;
 	char	*min;
 
 	i = 0;
@@ -51,7 +51,7 @@ static char	*str_fit(char *str, int n)
 	if (n < 0)
 	{
 		str[0] = '-';
-		n*= -1;
+		n* = -1;
 	}
 	str[i--] = '\0';
 	while (n != 0)
