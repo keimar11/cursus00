@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 00:06:59 by marvin            #+#    #+#             */
-/*   Updated: 2022/11/02 22:26:27 by marvin           ###   ########.fr       */
+/*   Updated: 2022/11/12 15:59:49 by keitakah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (s[i])
