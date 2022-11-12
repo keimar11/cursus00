@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 21:41:43 by marvin            #+#    #+#             */
-/*   Updated: 2022/11/12 16:41:35 by keitakah         ###   ########.fr       */
+/*   Updated: 2022/11/12 19:16:16 by keitakah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,18 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if ((size_t)start >= ft_strlen(s))
 		return (ft_strdup(""));
 	if (len > ft_strlen(s) - start + 1)
+	{
 		sub = (char *)malloc(sizeof(char) * (ft_strlen(s) - start + 1));
+		if (!sub)
+			return (NULL);
+		ft_strlcpy(sub, s + start, ft_strlen(s) - start + 1);
+	}
 	else
+	{
 		sub = (char *)malloc(sizeof(char) * (len + 1));
-	if (sub == NULL)
-		return (NULL);
-	ft_strlcpy(sub, s + start, len + 1);
+		if (!sub)
+			return (NULL);
+		ft_strlcpy(sub, s + start, len + 1);
+	}
 	return (sub);
 }

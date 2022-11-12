@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 00:08:01 by marvin            #+#    #+#             */
-/*   Updated: 2022/11/09 20:35:27 by keitakah         ###   ########.fr       */
+/*   Updated: 2022/11/12 19:17:31 by keitakah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ char	**ft_split(char const *s, char c)
 	int		j;
 	int		save;
 
+	if (!s)
+		return (NULL);
 	str = (char **)ft_calloc((arr_cnt(s, c) + 1), sizeof(char *));
 	if (!str)
 		return (NULL);

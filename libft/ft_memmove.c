@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 02:01:16 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/17 02:01:16 by marvin           ###   ########.fr       */
+/*   Updated: 2022/11/12 19:02:20 by keitakah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	*ft_memmove(void *s1, const void *s2, size_t n)
 {
-	char	*str;
-	char	*src;
+	unsigned char	*str;
+	unsigned char	*src;
 
 	if (!(s1) && !(s2))
 		return (NULL);
-	str = (char *)s1;
-	src = (char *)s2;
+	str = (unsigned char *)s1;
+	src = (unsigned char *)s2;
 	if (s1 > s2)
 	{
 		str += n - 1;

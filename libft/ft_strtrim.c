@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 01:27:30 by marvin            #+#    #+#             */
-/*   Updated: 2022/11/08 20:37:30 by keitakah         ###   ########.fr       */
+/*   Updated: 2022/11/12 19:11:14 by keitakah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	bgn;
 	size_t	end;
 
+	if (!s1 || !set)
+		return (NULL);
 	bgn = 0;
 	end = ft_strlen(s1);
 	while (s1[bgn] && ft_strchr(set, s1[bgn]))

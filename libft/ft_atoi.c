@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 01:29:37 by marvin            #+#    #+#             */
-/*   Updated: 2022/11/12 16:18:59 by keitakah         ###   ########.fr       */
+/*   Updated: 2022/11/12 18:58:34 by keitakah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	ft_atoi(const char *str)
 			m *= -1;
 		str++;
 	}
-	while (*str >= 48 && *str <= 57)
+	while (*str >= '0' && *str <= '9')
 	{
 		if (m > 0 && overflow(nb, *str) == NULL)
 			return ((int)LONG_MAX);
