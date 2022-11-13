@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 23:39:34 by marvin            #+#    #+#             */
-/*   Updated: 2022/11/13 23:39:34 by marvin           ###   ########.fr       */
+/*   Updated: 2022/11/14 00:24:40 by keitakah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	quo = nb / 10;
 	rem = nb % 10;
-	if (nb > 10)
+	if (nb >= 10)
 	{
 		ft_putnbr_fd(quo, fd);
 		ft_putnbr_fd(rem, fd);
@@ -35,8 +35,3 @@ void	ft_putnbr_fd(int n, int fd)
 	else
 		ft_putchar_fd('0' + rem, fd);
 }
-
-// int main(void)
-// {
-// 	ft_putnbr_fd(INT_MIN, 1);
-// }
