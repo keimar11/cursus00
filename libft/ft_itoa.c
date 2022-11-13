@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 16:12:02 by marvin            #+#    #+#             */
-/*   Updated: 2022/11/13 23:21:27 by keitakah         ###   ########.fr       */
+/*   Updated: 2022/11/13 23:25:09 by keitakah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ static size_t	str_cnt(int n)
 	}
 	return (cnt);
 }
-
 
 static char	*str_fit(char *str, long int n)
 {

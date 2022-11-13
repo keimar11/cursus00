@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 21:24:02 by marvin            #+#    #+#             */
-/*   Updated: 2022/11/13 11:54:36 by keitakah         ###   ########.fr       */
+/*   Updated: 2022/11/13 23:27:36 by keitakah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static void	putnbr_exc_fd(int n, int fd)
 void	ft_putnbr_fd(int n, int fd)
 {
 	char	arr[11];
-	size_t		idx;
+	size_t	idx;
 
 	if (n == INT_MIN || n == 0)
 	{
