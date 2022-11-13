@@ -21,7 +21,7 @@ static size_t	str_cnt(int n)
 		return (1);
 	if (n < 0)
 		cnt++;
-	while (n != 0)
+	while (n)
 	{
 		n /= 10;
 		cnt++;
@@ -29,19 +29,19 @@ static size_t	str_cnt(int n)
 	return (cnt);
 }
 
-static char	*str_min_fit(char *str)
-{
-	size_t		i;
-	char		*min;
+// static char	*str_min_fit(char *str)
+// {
+// 	size_t		i;
+// 	char		*min;
 
-	i = 0;
-	min = "-2147483648";
-	while (*min != '\0')
-		str[i++] = *min++;
-	return (str);
-}
+// 	i = 0;
+// 	min = "-2147483648";
+// 	while (*min != '\0')
+// 		str[i++] = *min++;
+// 	return (str);
+// }
 
-static char	*str_fit(char *str, int n)
+static char	*str_fit(char *str, long int n)
 {
 	size_t	i;
 
@@ -62,16 +62,40 @@ static char	*str_fit(char *str, int n)
 	return (str);
 }
 
+// char	*ft_itoa(int n)
+// {
+// 	char	*str;
+
+// 	str = (char *)malloc(sizeof(char) * str_cnt(n) + 1);
+// 	if (!str)
+// 		return (NULL);
+// 	if (n == INT_MIN)
+// 		str = str_min_fit(str);
+// 	else
+// 		str = str_fit(str, n);
+// 	return (str);
+// }
+
 char	*ft_itoa(int n)
 {
-	char	*str;
+	char		*str;
+	long int	nb;
 
 	str = (char *)malloc(sizeof(char) * str_cnt(n) + 1);
 	if (!str)
 		return (NULL);
-	if (n == INT_MIN)
-		str = str_min_fit(str);
-	else
-		str = str_fit(str, n);
+	nb = (long int)n;
+	str = str_fit(str, nb);
 	return (str);
+}
+
+#include <stdio.h>
+int	main(void)
+{
+	// size_t	i;
+
+	// i = 0;
+	// while (i < 111)
+	// 	printf("%s \n", ft_itoa(i++));
+	printf("%s\n", ft_itoa(-2147483648));
 }
