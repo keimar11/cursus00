@@ -1,61 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   Untitled-1                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 21:24:02 by marvin            #+#    #+#             */
-/*   Updated: 2022/11/13 23:27:36 by keitakah         ###   ########.fr       */
+/*   Created: 2022/11/13 23:39:34 by marvin            #+#    #+#             */
+/*   Updated: 2022/11/13 23:39:34 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static size_t	dgt_cnt(size_t n)
-{
-	size_t	cnt;
-
-	cnt = 0;
-	while (n != 0)
-	{
-		n /= 10;
-		cnt++;
-	}
-	return (cnt);
-}
-
-static void	putnbr_exc_fd(int n, int fd)
-{
-	if (n == INT_MIN)
-		ft_putstr_fd("-2147483648", fd);
-	else
-		ft_putchar_fd('0', fd);
-}
+#include <stdio.h>
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	arr[11];
-	size_t	idx;
+	size_t	nb;
+	size_t	quo;
+	size_t	rem;
 
-	if (n == INT_MIN || n == 0)
-	{
-		putnbr_exc_fd(n, fd);
-		return ;
-	}
+	nb = (size_t)n;
 	if (n < 0)
 	{
 		ft_putchar_fd('-', fd);
-		n *= -1;
+		nb *= -1;
 	}
-	idx = dgt_cnt(n);
-	arr[idx] = '\0';
-	while (idx)
+	quo = nb / 10;
+	rem = nb % 10;
+	if (nb > 10)
 	{
-		arr[idx-- -1] = '0' + (n % 10);
-		n /= 10;
+		ft_putnbr_fd(quo, fd);
+		ft_putnbr_fd(rem, fd);
 	}
-	ft_putstr_fd(arr, fd);
+	else
+		ft_putchar_fd('0' + rem, fd);
 }
 
 // int main(void)
