@@ -6,16 +6,16 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 00:08:01 by marvin            #+#    #+#             */
-/*   Updated: 2022/11/12 19:17:31 by keitakah         ###   ########.fr       */
+/*   Updated: 2022/11/13 11:53:41 by keitakah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	arr_cnt(char const *s, char c)
+static size_t	arr_cnt(char const *s, char c)
 {
-	int	i;
-	int	cnt;
+	size_t	i;
+	size_t	cnt;
 
 	i = 0;
 	cnt = 0;
@@ -31,9 +31,9 @@ static int	arr_cnt(char const *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**str;
-	int		i;
-	int		j;
-	int		save;
+	size_t	i;
+	size_t	j;
+	size_t	save;
 
 	if (!s)
 		return (NULL);

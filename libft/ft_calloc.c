@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 01:41:19 by marvin            #+#    #+#             */
-/*   Updated: 2022/11/11 17:22:55 by keitakah         ###   ########.fr       */
+/*   Updated: 2022/11/13 11:33:50 by keitakah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,7 @@ void	*ft_calloc(size_t n, size_t size)
 	void	*save;
 
 	if (n == 0 || size == 0)
-	{
-		save = malloc (1);
-		if (!save)
-			return (NULL);
-		ft_bzero (save, 1);
-		return (save);
-	}
+		return (ft_calloc(1, 1));
 	if (n > __SIZE_MAX__ / size)
 		return (NULL);
 	save = malloc(n * size);

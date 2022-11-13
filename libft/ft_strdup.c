@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 01:52:26 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/17 01:52:26 by marvin           ###   ########.fr       */
+/*   Updated: 2022/11/13 11:52:15 by keitakah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 char	*ft_strdup(const char *str)
 {
 	char	*scr;
-	int		strl;
-	int		i;
+	size_t	strl;
+	size_t	i;
 
 	strl = ft_strlen (str);
 	scr = (char *)malloc (sizeof(char) * (strl + 1));
