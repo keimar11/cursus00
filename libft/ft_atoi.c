@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 01:29:37 by marvin            #+#    #+#             */
-/*   Updated: 2022/11/12 18:58:34 by keitakah         ###   ########.fr       */
+/*   Updated: 2022/11/14 20:15:02 by keitakah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,3 @@ int	ft_atoi(const char *str)
 	}
 	return (m * nb);
 }
-
-/*
-	overflow() & underflow()はLONGMAXのときの挙動
-*/
