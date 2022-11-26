@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cui <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/18 00:01:01 by cui               #+#    #+#             */
-/*   Updated: 2022/11/22 22:15:20 by marvin           ###   ########.fr       */
+/*   Created: 2022/11/21 15:22:34 by cui               #+#    #+#             */
+/*   Updated: 2022/11/21 15:29:20 by cui              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-t_list	*ft_lstnew(void *content)
+#include <stdio.h>
+int	main()
 {
-	t_list	*new;
-	
-	new = (t_list *)malloc(sizeof(t_list));
-	if (!new)
-		return (NULL);
-	new -> content = content;
-	new -> next = NULL;
-	return (new);
+	char	str[] = "     I am Ironman ";
+	printf("%d\n", ft_strtrim(str, " I"));
+	return (0);
 }

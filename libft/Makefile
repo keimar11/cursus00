@@ -27,7 +27,7 @@ bonus: $(BOBJECTS)
 	$(CC) -c $(CFLAGS) $?
 
 clean:
-	rm -f $(OBJECTS)
+	rm -f $(OBJECTS) $(BOBJECTS)
 
 fclean: clean
 	rm -f $(NAME)
