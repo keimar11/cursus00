@@ -12,6 +12,64 @@
 
 #include "libft.h"
 
+static void	allfree(char **arr)
+{
+	size_t	i;
+
+	i = 0;
+	while (arr[i])
+	{
+		free(arr[i]);
+		i++;
+	}
+	free (arr);
+}
+
+static char	*char_put(char const *s, size_t size)
+{
+	char	*str;
+	size_t	i;
+
+	str = (char *)malloc(sizeof(char) * (size + 1));
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (i < size)
+	{
+		str[i] = s[i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
+}
+
+static char	**do_split(char **arr, char const *s, char c)
+{
+	size_t	i;
+	size_t	j;
+	size_t	save;
+
+	i = 0;
+	j = 0;
+	while (s[i])
+	{
+		while (s[i] == c)
+			i++;
+		if (s[i] == '\0')
+			break ;
+		save = i;
+		while (s[i] != c && s[i] != '\0')
+			i++;
+		arr[j] = char_put(&s[save], i - save);
+		if (arr[j++] == NULL)
+		{
+			allfree(arr);
+			return (NULL);
+		}
+	}
+	return (arr);
+}
+
 static size_t	arr_cnt(char const *s, char c)
 {
 	size_t	i;
@@ -30,30 +88,15 @@ static size_t	arr_cnt(char const *s, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	char	**str;
-	size_t	i;
-	size_t	j;
-	size_t	save;
+	char	**arr;
 
 	if (!s)
 		return (NULL);
-	str = (char **)ft_calloc((arr_cnt(s, c) + 1), sizeof(char *));
-	if (!str)
+	arr = (char **)ft_calloc((arr_cnt(s, c) + 1), sizeof(char *));
+	if (!arr)
 		return (NULL);
-	i = 0;
-	j = 0;
-	while (s[i])
-	{
-		while (s[i] == c)
-			i++;
-		if (s[i] == '\0')
-			break ;
-		save = i;
-		while (s[i] != c && s[i] != 0)
-			i++;
-		str[j++] = ft_substr(s, save, i - save);
-	}
-	return (str);
+	arr = do_split(arr, s, c);
+	return (arr);
 }
 
 // #include <stdio.h>

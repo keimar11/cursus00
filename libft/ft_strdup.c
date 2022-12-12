@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 01:52:26 by marvin            #+#    #+#             */
-/*   Updated: 2022/11/13 11:52:15 by keitakah         ###   ########.fr       */
+/*   Updated: 2022/12/12 12:57:21 by keitakah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ char	*ft_strdup(const char *str)
 
 	strl = ft_strlen (str);
 	scr = (char *)malloc (sizeof(char) * (strl + 1));
-	if (scr == 0)
-		return (0);
+	if (!scr)
+		return (NULL);
 	i = 0;
 	while (str[i])
 	{
 		scr[i] = str[i];
 		i++;
 	}
-	scr[i] = 0;
+	scr[i] = '\0';
 	return (scr);
 }

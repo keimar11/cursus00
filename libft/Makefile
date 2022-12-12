@@ -20,8 +20,10 @@ all: $(NAME)
 $(NAME): $(OBJECTS)
 	$(AR) -r $@ $?
 
-bonus: $(BOBJECTS)
-	$(AR) -a $@ $?
+bonus:$(NAME)
+
+$(NAME): $(BOBJECT)
+	$(AR) -r $@ $?
 
 %.o: %.c
 	$(CC) -c $(CFLAGS) $?
