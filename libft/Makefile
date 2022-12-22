@@ -8,21 +8,12 @@ SOURCES = \
 	ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c \
 	ft_putendl_fd.c ft_putnbr_fd.c
 OBJECTS = $(SOURCES:.c=.o)
-BSOURCES = \
-	ft_lstsize.c ft_lstadd_front.c ft_lstadd_back.c ft_lstdelone.c \
-	ft_lstclear.c ft_lstiter.c ft_lstnew.c ft_lstlast.c ft_lstmap.c
-BOBJECTS = $(BSOURCES:.c=.o)
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	$(AR) -r $@ $?
-
-bonus:$(NAME)
-
-$(NAME): $(BOBJECT)
 	$(AR) -r $@ $?
 
 %.o: %.c
